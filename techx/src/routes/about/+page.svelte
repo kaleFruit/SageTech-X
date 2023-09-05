@@ -206,7 +206,7 @@
     text-align: center;
     border: 5px solid rgba(255, 255, 255, 0.2);
     border-radius: 25px;
-    background-color: #1d1d1d02;
+    background-color: #2e2e2e34;
     box-shadow: 0 0 10px rgb(255, 255, 255, 0.4);
   }
 
@@ -218,11 +218,7 @@
     align-content: center;
     border: 5px solid rgba(255, 255, 255, 0.423);
     border-radius: 25px;
-    background-image: linear-gradient(
-      135deg,
-      var(--colorStart),
-      rgba(0, 0, 0, 0)
-    );
+    background-color: #2e2e2e34;
   }
 
   h1 {

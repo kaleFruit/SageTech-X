@@ -1,12 +1,16 @@
 <nav>
-  <ul>
-    <li><a href="/">HOME</a></li>
-  </ul>
-  <ul><img src="logo_white.svg" alt="logo" height="30px" width="30px" /></ul>
-  <ul>
-    <li><a href="/about">ARCHIVES</a></li>
-  </ul>
+  <span style="text-align: right; flex-basis: 45%;"><a href="/">HOME</a> </span>
+  <span style="text-align: left;  flex-basis: 45%;"
+    ><a href="/about">ARCHIVES</a></span
+  >
 </nav>
+<img
+  src="logo_white.svg"
+  alt="logo"
+  height="30px"
+  width="30px"
+  style="position: absolute; left: 0; right: 0; margin: auto; top: 0.5rem;"
+/>
 <slot />
 
 <svelte:head>
@@ -37,10 +41,10 @@
     display: flex;
     justify-content: center;
     background-color: transparent;
-    gap: 3rem;
     border-radius: 0.5rem;
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    gap: 75px;
   }
   a {
     position: relative;
@@ -48,13 +52,5 @@
     color: antiquewhite;
     font-family: "Courier New", Courier, monospace;
     font-size: 1rem;
-  }
-  ul {
-    list-style-type: none;
-    position: relative;
-    text-align: center;
-    margin-top: auto;
-    margin-bottom: auto;
-    padding: 0;
   }
 </style>
