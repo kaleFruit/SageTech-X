@@ -762,7 +762,7 @@
             gap: 2rem;
             "
             >
-              <div class="role" style="--color:var(--beige); flex-basis: 42%;">
+              <div class="role" style="--color:var(--beige); flex-grow: 1;">
                 <h>EDITORS</h>
                 <div class="cards">
                   <div class="infoCard">
@@ -777,7 +777,7 @@
                   </div>
                 </div>
               </div>
-              <div class="role" style="--color: var(--lime); flex-basis: 42%;">
+              <div class="role" style="--color: var(--lime); flex-grow: 1;">
                 <h>GRAPHIC DESIGNERS</h>
                 <div class="cards">
                   <div class="infoCard">
@@ -925,7 +925,7 @@
   .mobile .infoCard {
     border: 1px solid rgba(215, 218, 250, 0.343);
     border-radius: 0.5rem;
-    padding: 0.2rem;
+    padding: 0.1rem;
     background-color: #1f1f1f;
   }
   .mobile .role {
