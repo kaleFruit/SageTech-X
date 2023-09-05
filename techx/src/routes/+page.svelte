@@ -1,14 +1,20 @@
 <script>
   import { Parallax, ParallaxLayer } from "svelte-parallax";
   import Page from "./about/+page.svelte";
-
   let windowHeight = 0;
+  let styles = {
+    primaryColor: "#9fc131",
+    primaryAccent: "#005c53",
+    darkerAccent: "#00ff77",
+    lime: "#dbf227",
+    beige: "#d1cf63",
+  };
   let paths = [
     {
       id: 1,
       form: "M43.5,-58.6C54.2,-52.2,59.2,-36.5,66.5,-20.2C73.8,-3.8,83.4,13.2,80.8,27.8C78.3,42.5,63.5,54.7,47.9,64.5C32.4,74.3,16.2,81.6,2.1,78.7C-12,75.8,-23.9,62.6,-36.6,51.9C-49.3,41.2,-62.6,32.9,-65.5,21.8C-68.4,10.7,-60.8,-3.3,-54.8,-16.6C-48.8,-29.9,-44.4,-42.5,-35.5,-49.5C-26.7,-56.5,-13.3,-57.8,1.5,-60C16.4,-62.1,32.8,-64.9,43.5,-58.6Z",
       pos: [-10, 80],
-      color: ["#eeee00", "#ee0000"],
+      color: [styles.primaryAccent, styles.primaryColor],
       rate: 0.5,
       z: -1,
     },
@@ -17,7 +23,7 @@
       id: 5,
       form: "M27.5,-46.5C37.1,-42,47.5,-37.7,54.5,-30C61.5,-22.3,65.2,-11.1,61,-2.4C56.9,6.3,44.9,12.7,41.3,26.3C37.6,39.8,42.3,60.7,36.9,67.3C31.4,73.9,15.7,66.3,3.3,60.6C-9.1,55,-18.3,51.2,-29.4,47.9C-40.5,44.5,-53.6,41.5,-53.8,33.6C-54,25.7,-41.3,12.8,-41.2,0.1C-41,-12.7,-53.4,-25.3,-51.3,-30C-49.2,-34.6,-32.6,-31.1,-21.6,-34.9C-10.7,-38.6,-5.3,-49.5,1.8,-52.6C8.9,-55.7,17.8,-51,27.5,-46.5Z",
       pos: [275, 100],
-      color: ["#aabbaa", "#2222ff"],
+      color: [styles.primaryColor, styles.primaryAccent],
       rate: 0.5,
       z: 0,
     },
@@ -31,14 +37,14 @@
     //   z: -2,
     // },
 
-    // {
-    //   id: 3,
-    //   form: "M60.3,-10.4C69.4,8.6,62.2,42.1,42.9,55.3C23.5,68.5,-7.9,61.3,-32.4,43.8C-56.8,26.2,-74.3,-1.8,-67.7,-17.2C-61.2,-32.7,-30.6,-35.5,-2.5,-34.7C25.6,-33.9,51.1,-29.4,60.3,-10.4Z",
-    //   pos: [25, 350],
-    //   color: ["#dddddd", "#22dddd"],
-    //   rate: 3,
-    //   z: -3,
-    // },
+    {
+      id: 3,
+      form: "M60.3,-10.4C69.4,8.6,62.2,42.1,42.9,55.3C23.5,68.5,-7.9,61.3,-32.4,43.8C-56.8,26.2,-74.3,-1.8,-67.7,-17.2C-61.2,-32.7,-30.6,-35.5,-2.5,-34.7C25.6,-33.9,51.1,-29.4,60.3,-10.4Z",
+      pos: [280, 350],
+      color: [styles.primaryColor, styles.beige],
+      rate: 2,
+      z: -3,
+    },
 
     // {
     //   id: 4,
@@ -49,14 +55,14 @@
     //   z: 0,
     // },
 
-    // {
-    //   id: 6,
-    //   form: "M27.5,-22.4C33.4,-14.5,34.5,-3.2,36.3,16.1C38.1,35.3,40.7,62.6,30.5,70.1C20.3,77.7,-2.7,65.5,-26.1,54.3C-49.4,43,-73.1,32.5,-72.5,20.7C-71.9,8.8,-47,-4.4,-30.9,-14.7C-14.8,-25,-7.4,-32.3,1.7,-33.7C10.8,-35,21.5,-30.4,27.5,-22.4Z",
-    //   pos: [100, 250],
-    //   color: ["#aabbaa", "#2222ff"],
-    //   rate: 1,
-    //   z: 0,
-    // },
+    {
+      id: 6,
+      form: "M27.5,-22.4C33.4,-14.5,34.5,-3.2,36.3,16.1C38.1,35.3,40.7,62.6,30.5,70.1C20.3,77.7,-2.7,65.5,-26.1,54.3C-49.4,43,-73.1,32.5,-72.5,20.7C-71.9,8.8,-47,-4.4,-30.9,-14.7C-14.8,-25,-7.4,-32.3,1.7,-33.7C10.8,-35,21.5,-30.4,27.5,-22.4Z",
+      pos: [100, 250],
+      color: [styles.primaryColor, styles.primaryAccent],
+      rate: 1.3,
+      z: 0,
+    },
     // {
     //   id: 7,
     //   form: "M49.2,-58.6C64.6,-45.8,78.4,-31,78.2,-16.1C78.1,-1.2,64,13.8,51.5,24.5C39.1,35.2,28.3,41.6,14.8,50.9C1.3,60.3,-14.8,72.6,-27.5,70.2C-40.2,67.9,-49.4,50.9,-59.5,34.1C-69.6,17.2,-80.5,0.6,-74.7,-9.9C-68.9,-20.3,-46.5,-24.5,-31.3,-37.4C-16,-50.3,-8,-71.9,4.5,-77.2C16.9,-82.5,33.9,-71.5,49.2,-58.6Z",
@@ -141,14 +147,12 @@
             <feComposite operator="in" in2="SourceGraphic" result="monoNoise" />
             <feBlend in="SourceGraphic" in2="monoNoise" mode="hard-light" />
           </filter>
-
           <path
             filter="url(#grain)"
             d={pathInfo.form}
             transform="scale(3 4) translate({pathInfo.pos[0]} {pathInfo
               .pos[1]})"
           />
-
           <linearGradient id="gradient{pathInfo.id}">
             <stop stop-color={pathInfo.color[0]} offset="30%" />
             <stop stop-color={pathInfo.color[1]} offset="100%" />
@@ -168,23 +172,20 @@
         <radialGradient id="G2" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
           <stop
             offset="0%"
-            style="stop-color:rgb(121,77,0,0.3);    stop-opacity:1"
+            style="stop-color:var(--beige);    stop-opacity:0.3"
           />
-          <stop
-            offset="100%"
-            style="stop-color:rgb(252,121,88); stop-opacity:0"
-          />
+          <stop offset="100%" style="stop-color:var(--beige); stop-opacity:0" />
         </radialGradient>
-        <ellipse cx="300" cy="600" rx="300" ry="250" fill="url(#G2)" />
+        <ellipse cx="150" cy="650" rx="300" ry="400" fill="url(#G2)" />
 
         <radialGradient id="G3" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
           <stop
             offset="0%"
-            style="stop-color:rgb(88,121,252,0.3);    stop-opacity:1"
+            style="stop-color:var(--primary-accent);    stop-opacity:0.5"
           />
           <stop
             offset="100%"
-            style="stop-color:rgb(88,121,252); stop-opacity:0"
+            style="stop-color:var(--darker-accent); stop-opacity:0"
           />
         </radialGradient>
         <ellipse cx="850" cy="100" rx="300" ry="250" fill="url(#G3)" />
@@ -223,7 +224,6 @@
           border: 2px solid rgba(255, 255, 255, 1);
           border-radius: 1rem;
           box-shadow: 0 0 10px rgb(255, 255, 255, 0.4);
-          background-image: linear-gradient(135deg, rgba(22, 121, 252, 0.1), rgba(0,0,0,0));
           font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
           "
         >
@@ -286,7 +286,7 @@
           "
         >
           If you're interested in contributing to the magazine, please contact
-          24robertsonk.
+          24robertsonk@sagehillschool.org.
         </p>
       </div>
       <svg
@@ -300,26 +300,23 @@
         <radialGradient id="G4" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
           <stop
             offset="0%"
-            style="stop-color:rgb(55,121,252,0.3);    stop-opacity:1"
+            style="stop-color:var(--primary-color);    stop-opacity:0.5"
           />
           <stop
             offset="100%"
-            style="stop-color:rgb(252,121,88); stop-opacity:0"
+            style="stop-color:var(--primary-accent); stop-opacity:0"
           />
         </radialGradient>
-        <ellipse cx="0" cy="800" rx="500" ry="500" fill="url(#G4)" />
+        <ellipse cx="0" cy="750" rx="500" ry="500" fill="url(#G4)" />
 
         <radialGradient id="G9" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
           <stop
             offset="0%"
-            style="stop-color:rgb(252,121,252,0.3);    stop-opacity:1"
+            style="stop-color:var(--darker-accent);    stop-opacity:0.2"
           />
-          <stop
-            offset="100%"
-            style="stop-color:rgb(88,121,252); stop-opacity:0"
-          />
+          <stop offset="100%" style="stop-color:var(--lime); stop-opacity:0" />
         </radialGradient>
-        <ellipse cx="850" cy="500" rx="300" ry="500" fill="url(#G9)" />
+        <ellipse cx="850" cy="400" rx="300" ry="400" fill="url(#G9)" />
       </svg>
     </ParallaxLayer>
 
@@ -360,7 +357,7 @@
       gap: 2rem;
       "
       >
-        <div class="role" style="--color:goldenRod; flex-basis: 44%;">
+        <div class="role" style="--color:var(--beige); flex-basis: 44%;">
           <h>EDITORS</h>
           <div class="cards">
             <div class="infoCard">
@@ -375,7 +372,7 @@
             </div>
           </div>
         </div>
-        <div class="role" style="--color: rgba(33, 121, 252); flex-basis: 44%;">
+        <div class="role" style="--color: var(--lime); flex-basis: 44%;">
           <h>GRAPHIC DESIGNERS</h>
           <div class="cards">
             <div class="infoCard">
@@ -390,7 +387,7 @@
             </div>
           </div>
         </div>
-        <div class="role" style="--color: rgba(22,252,22); width: 100%;">
+        <div class="role" style="--color: var(--darker-accent); width: 100%;">
           <h>WRITERS</h>
           <div class="cards">
             <div class="infoCard">
@@ -463,50 +460,20 @@
         <radialGradient id="G5" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
           <stop
             offset="0%"
-            style="stop-color:rgb(121,88,0,0.4);    stop-opacity:1"
+            style="stop-color:var(--primary-color);    stop-opacity:0.3"
           />
-          <stop
-            offset="100%"
-            style="stop-color:rgb(252,121,88); stop-opacity:0"
-          />
+          <stop offset="100%" style="stop-color:var(--beige); stop-opacity:0" />
         </radialGradient>
-        <ellipse cx="100" cy="400" rx="400" ry="350" fill="url(#G5)" />
+        <ellipse cx="100" cy="550" rx="350" ry="350" fill="url(#G5)" />
 
-        <radialGradient id="G3" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+        <radialGradient id="G8" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
           <stop
             offset="0%"
-            style="stop-color:rgb(88,121,252,0.3);    stop-opacity:1"
+            style="stop-color:var(--darker-accent);    stop-opacity:0.3"
           />
-          <stop
-            offset="100%"
-            style="stop-color:rgb(88,121,252); stop-opacity:0"
-          />
+          <stop offset="100%" style="stop-color:var(--lime); stop-opacity:0" />
         </radialGradient>
-        <ellipse cx="850" cy="400" rx="300" ry="400" fill="url(#G3)" />
-
-        <radialGradient id="G7" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-          <stop
-            offset="0%"
-            style="stop-color:rgb(88,121,121,0.3);    stop-opacity:1"
-          />
-          <stop
-            offset="100%"
-            style="stop-color:rgb(88,121,121); stop-opacity:0"
-          />
-        </radialGradient>
-        <ellipse cx="850" cy="700" rx="500" ry="250" fill="url(#G7)" />
-
-        <radialGradient id="G10" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-          <stop
-            offset="0%"
-            style="stop-color:rgb(88,252,121,0.15);    stop-opacity:1"
-          />
-          <stop
-            offset="100%"
-            style="stop-color:rgb(88,252,121); stop-opacity:0"
-          />
-        </radialGradient>
-        <ellipse cx="200" cy="850" rx="400" ry="400" fill="url(#G10)" />
+        <ellipse cx="850" cy="400" rx="300" ry="400" fill="url(#G8)" />
       </svg>
     </ParallaxLayer>
   </Parallax>
@@ -532,9 +499,6 @@
   }
   svg {
     width: 100%;
-  }
-  :global(body) {
-    background-color: #000000;
   }
   .infoCard {
     border: 3px solid rgba(215, 218, 250, 0.343);

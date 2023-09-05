@@ -33,11 +33,11 @@
           <radialGradient id="G2" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
             <stop
               offset="0%"
-              style="stop-color:rgb(252,88,0,0.3);    stop-opacity:1"
+              style="stop-color:var(--primary-color);    stop-opacity:0.4"
             />
             <stop
               offset="100%"
-              style="stop-color:rgb(252,121,88); stop-opacity:0"
+              style="stop-color:var(--primary-color); stop-opacity:0"
             />
           </radialGradient>
           <ellipse cx="100" cy="100" rx="400" ry="400" fill="url(#G2)" />
@@ -45,11 +45,11 @@
           <radialGradient id="G3" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
             <stop
               offset="0%"
-              style="stop-color:rgb(88,252,252,0.3);    stop-opacity:1"
+              style="stop-color:var(--darker-accent);    stop-opacity:0.3"
             />
             <stop
               offset="100%"
-              style="stop-color:rgb(88,88,252); stop-opacity:0"
+              style="stop-color:var(--beige); stop-opacity:0"
             />
           </radialGradient>
           <ellipse cx="100%" cy="30rem" rx="300" ry="500" fill="url(#G3)" />
@@ -57,45 +57,6 @@
       </div>
     </ParallaxLayer>
 
-    <!-- <ParallaxLayer offset={0} rate={2} style="z-index: -1">
-      <div style="display: flex; width: 100%; justify-content: center;">
-        <svg
-          class="gr1"
-          xmlns="http://www.w3.org/2000/svg"
-          width="100%"
-          height="2000"
-          viewBox="0 0 904 2000"
-          fill="url(#gradient1)"
-          preserveAspectRatio="none"
-        >
-          <filter id="grain">
-            <feTurbulence
-              type="fractalNoise"
-              baseFrequency="3"
-              stitchTiles="stitch"
-            />
-            <feColorMatrix
-              in="colorNoise"
-              type="matrix"
-              values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"
-            />
-            <feComposite operator="in" in2="SourceGraphic" result="monoNoise" />
-            <feBlend in="SourceGraphic" in2="monoNoise" mode="hard-light" />
-          </filter>
-
-          <path
-            filter="url(#grain)"
-            d="M44.3,-28.5C57.8,-18.4,69.4,0,65.3,13.6C61.1,27.1,41.2,35.8,22.7,43.3C4.1,50.8,-13.2,57.1,-27.8,52.2C-42.3,47.3,-54.1,31.2,-54.1,16.6C-54.1,1.9,-42.3,-11.2,-31.3,-20.7C-20.3,-30.1,-10.2,-35.9,2.6,-38C15.4,-40.1,30.8,-38.5,44.3,-28.5Z"
-            transform="scale(4 4) translate(100 50)"
-          />
-
-          <linearGradient id="gradient1">
-            <stop stop-color="rgba(101,252,11)" offset="30%" />
-            <stop stop-color="rgba(252,101,11)" offset="100%" />
-          </linearGradient>
-        </svg>
-      </div>
-    </ParallaxLayer> -->
     <ParallaxLayer offset={1} rate={1.5}>
       <svg
         class="gr1"
@@ -128,8 +89,8 @@
         />
 
         <linearGradient id="gradient2">
-          <stop stop-color="rgba(101,55,252)" offset="30%" />
-          <stop stop-color="rgba(252,101,11)" offset="100%" />
+          <stop stop-color="var(--primary-color)" offset="30%" />
+          <stop stop-color="var(--primary-accent)" offset="100%" />
         </linearGradient>
       </svg>
     </ParallaxLayer>
@@ -183,11 +144,8 @@
     >
       <div class="issue">
         <a href="/3.1" style="flex-basis: 100%;">Volume 3 Issue 2</a>
-        <div
-          class="subbox"
-          style="flex-basis: 100%; --colorStart: rgba(55,252,33,0.2);"
-        >
-          <h2>ARTICLES</h2>
+        <div class="subbox" style="flex-basis: 100%;">
+          <h2 style="color: var(--darker-accent);">ARTICLES</h2>
           <div style="display: flex; gap: 2rem; justify-content: center;">
             <ul
               style="list-style-type: none; text-align: right; flex-basis: 45%; "
@@ -217,36 +175,20 @@
             </ul>
           </div>
         </div>
-        <div
-          class="subbox"
-          style="flex-grow: 1; --colorStart: rgba(222, 161, 33, 0.3);"
-        >
-          <h2>EDITORS</h2>
+        <div class="subbox" style="flex-grow: 1; ">
+          <h2 style="color: var(--beige);">EDITORS</h2>
           <ul>
             <li>Phoebe Pan</li>
             <li>Katherine Robertson</li>
             <li>Marcus Yoo</li>
           </ul>
         </div>
-        <div
-          class="subbox"
-          style="flex-grow: 1; --colorStart: rgba(0, 55, 252, 0.3);"
-        >
-          <h2>GRAPHIC DESIGNERS</h2>
+        <div class="subbox" style="flex-grow: 1;">
+          <h2 style="color: var(--lime);">GRAPHIC DESIGNERS</h2>
           <ul style="text-align: center;">
             <li>Katherine Robertson</li>
             <li>Marcus Yoo</li>
           </ul>
-
-          <!-- <div class="photos">
-      {#each Object.entries(modules) as [path, rubbish]}
-        <figure>
-          <img class="reference" src={path} alt={path} />
-        </figure>
-      {:else}
-        <p>loading...</p>
-      {/each}
-    </div> -->
         </div>
       </div></ParallaxLayer
     >
@@ -254,9 +196,6 @@
 </div>
 
 <style>
-  :global(body) {
-    background-color: #000000;
-  }
   .issue {
     display: flex;
     justify-content: space-between;

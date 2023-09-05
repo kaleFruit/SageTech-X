@@ -23,14 +23,24 @@
 </svelte:head>
 
 <style>
+  :global(:root) {
+    --primary-color: #9fc131;
+    --primary-accent: #005c53;
+    --darker-accent: #00ff77;
+    --lime: #dbf227;
+    --beige: #d1cf63;
+    color: antiquewhite;
+    background-color: black;
+  }
   nav {
+    width: 100%;
     display: flex;
     justify-content: center;
-    align-content: center;
     background-color: transparent;
     gap: 3rem;
     border-radius: 0.5rem;
-    padding: 0.25rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
   }
   a {
     position: relative;

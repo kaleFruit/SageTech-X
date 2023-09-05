@@ -168,10 +168,6 @@
 </Parallax>
 
 <style>
-  :global(body) {
-    background-color: #000000;
-  }
-
   .photo {
     width: 30rem;
   }
