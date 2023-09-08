@@ -1,1 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" style="enable-background:new 0 0 595.3 841.9;" xml:space="preserve" viewBox="181 308.9 232 224"><style type="text/css">	.st0{filter:url(#Adobe_OpacityMaskFilter);}	.st1{mask:url(#SVGID_1_);}	.st2{fill:#FFFFFF;}	.st3{fill:#FFFFFF;stroke:#4DB857;stroke-width:15;stroke-miterlimit:10;}	.st4{fill:none;stroke:#FFFFFF;stroke-width:15;stroke-miterlimit:10;}</style><g>	<defs>		<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="183.6" y="313.9" width="227" height="215">			<feFlood style="flood-color:white;flood-opacity:1" result="back"></feFlood>			<feBlend in="SourceGraphic" in2="back" mode="normal"></feBlend>		</filter>	</defs>	<mask maskUnits="userSpaceOnUse" x="183.6" y="313.9" width="227" height="215" id="SVGID_1_">		<g class="st0">							<image style="overflow:visible;" width="232" height="219" xlink:href="78A16B6F050F2C3.jpg" transform="matrix(1 0 0 1 181 311.9)">			</image>		</g>	</mask>	<g class="st1">		<g>			<g>				<g>					<g>						<g>							<g>								<polygon class="st2" points="273.1,321.4 197.1,321.4 321.2,521.4 397.1,521.4         "></polygon>								<polygon class="st3" points="273.1,321.4 197.1,321.4 321.2,521.4 397.1,521.4         "></polygon>							</g>						</g>					</g>				</g>			</g>		</g>	</g></g><line class="st4" x1="308.1" y1="321.9" x2="398.1" y2="321.9"></line><line class="st4" x1="390.6" y1="406.4" x2="390.6" y2="316.4"></line><line class="st4" x1="197.1" y1="520.9" x2="287.1" y2="520.9"></line><line class="st4" x1="204.6" y1="525.4" x2="204.6" y2="435.4"></line></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.8.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 595.3 841.9" style="enable-background:new 0 0 595.3 841.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{filter:url(#Adobe_OpacityMaskFilter);}
+	.st1{mask:url(#SVGID_1_);}
+	.st2{fill:#FFFFFF;}
+	.st3{fill:#FFFFFF;stroke:#4DB857;stroke-width:15;stroke-miterlimit:10;}
+	.st4{fill:none;stroke:#FFFFFF;stroke-width:15;stroke-miterlimit:10;}
+</style>
+<g>
+	<defs>
+		<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="183.6" y="313.9" width="227" height="215">
+			<feFlood  style="flood-color:white;flood-opacity:1" result="back"/>
+			<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+		</filter>
+	</defs>
+	<mask maskUnits="userSpaceOnUse" x="183.6" y="313.9" width="227" height="215" id="SVGID_1_">
+		<g class="st0">
+			
+				<image style="overflow:visible;" width="232" height="219" xlink:href="78A16B6F050F2C3.jpg"  transform="matrix(1 0 0 1 181 311.9)">
+			</image>
+		</g>
+	</mask>
+	<g class="st1">
+		<g>
+			<g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<polygon class="st2" points="273.1,321.4 197.1,321.4 321.2,521.4 397.1,521.4 								"/>
+								<polygon class="st3" points="273.1,321.4 197.1,321.4 321.2,521.4 397.1,521.4 								"/>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+<line class="st4" x1="308.1" y1="321.9" x2="398.1" y2="321.9"/>
+<line class="st4" x1="390.6" y1="406.4" x2="390.6" y2="316.4"/>
+<line class="st4" x1="197.1" y1="520.9" x2="287.1" y2="520.9"/>
+<line class="st4" x1="204.6" y1="525.4" x2="204.6" y2="435.4"/>
+</svg>

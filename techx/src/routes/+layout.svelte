@@ -14,7 +14,7 @@
 <slot />
 
 <svelte:head>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link
     rel="preconnect"
     href="https://fonts.gstatic.com"
@@ -23,18 +23,30 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&display=swap"
     rel="stylesheet"
+  /> -->
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Lato&family=Mulish"
   />
+  <style>
+    div:nth-child(1) {
+      font-family: "Lato", serif;
+    }
+    div:nth-child(2) {
+      font-family: "Mulish", serif;
+    }
+  </style>
 </svelte:head>
 
 <style>
   :global(:root) {
-    --primary-color: #9fc131;
+    --primary-color: #5fc131;
     --primary-accent: #005c53;
     --darker-accent: #00ff77;
     --lime: #dbf227;
-    --beige: #d1cf63;
+    --beige: #c5be8c;
     color: antiquewhite;
-    background-color: black;
+    background-color: rgb(5, 11, 3);
   }
   nav {
     width: 100%;

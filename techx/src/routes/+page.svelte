@@ -2,7 +2,12 @@
   import { Parallax, ParallaxLayer } from "svelte-parallax";
   import Page from "./about/+page.svelte";
   import MediaQuery from "../MediaQuery.svelte";
+  import { draw } from "svelte/transition";
+  import { quintOut } from "svelte/easing";
+  import Team from "./team.svelte";
+
   let windowHeight = 0;
+  let windowWidth = 0;
   let styles = {
     primaryColor: "#9fc131",
     primaryAccent: "#005c53",
@@ -10,6 +15,8 @@
     lime: "#dbf227",
     beige: "#d1cf63",
   };
+  let pageX = 0;
+  let pageY = 0;
   let paths = [
     {
       id: 1,
@@ -44,52 +51,216 @@
       z: 0,
     },
   ];
+  let scroll = 0;
+  let svgShow = false;
+
+  $: if (scroll > 1000) {
+    svgShow = true;
+  }
 </script>
 
-<MediaQuery query="(min-width: 600px)" let:matches>
-  {#if matches}
-    <div class="default">
-      <div class="container">
-        <Parallax sections={3.5} sectionHeight={0.8 * windowHeight}>
-          <ParallaxLayer
-            rate={1}
-            offset={0}
-            style="
-          display: flex; 
-          justify-items: center;
-          justify-content: center;
-          align-content: center;
-          align-items: center; 
-          flex-direction: column;
+<svelte:window
+  bind:outerHeight={windowHeight}
+  bind:outerWidth={windowWidth}
+  bind:scrollY={scroll}
+  on:mousemove={(e) => ({ pageX, pageY } = e)}
+/>
+
+<div class="container">
+  <Parallax sections={3.5} sectionHeight={0.8 * windowHeight}>
+    <ParallaxLayer
+      rate={1}
+      offset={0}
+      style="
+      display: flex; 
+      justify-items: center;
+      justify-content: center;
+      align-content: center;
+      align-items: center; 
+      flex-direction: column;
+      "
+    >
+      <h1
+        style="
+        text-align: center;
+        padding: 0;
+        margin: 0;
         "
-          >
-            <h1
-              style="
-          text-align: center;
-          padding: 0;
-          margin: 0;
+      >
+        Sage Tech-X
+      </h1>
+      <h1
+        style="
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        "
+      >
+        Magazine
+      </h1>
+    </ParallaxLayer>
+    <ParallaxLayer
+      rate={1}
+      offset={1}
+      style="
+            justify-content: flex-start;
+            margin-top: 15rem;
+            align-items: left;
+            font-size: 2rem;
+            z-index: 2;
+            position: absolute;
+            padding-left: 4rem; 
+            padding-right: 4rem; 
           "
-            >
-              Sage Tech-X
-            </h1>
-            <h1
+    >
+      <!-- <div
+        style="display: flex; width: 100%; height: 100%; position: absolute;"
+      >
+        <div
+          style="background-color: green; flex-basis: {(pageX / windowWidth) *
+            100}%; height: 100%;"
+        />
+      </div> -->
+      <h1 style="text-align: left;">Our mission.</h1>
+      <div style="display: flex;">
+        <div
+          style="
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 550px;
+        "
+        >
+          <div style="height: 100%; padding: 0; margin: 0;">
+            <!-- <p
               style="
-          text-align: center;
-          padding: 0;
-          margin: 0;
-          "
+              color: antiquewhite;
+              padding: 1rem;
+              background: linear-gradient(to right, var(--primary-color)  {(pageX /
+                windowWidth) *
+                100}%, black  {(pageX / windowWidth) * 100}%);
+              border: 0.1rem solid rgba(255, 255, 255, 1);
+              border-radius: 1rem;
+              "
             >
-              Magazine
-            </h1>
-          </ParallaxLayer>
+              The Sage Tech-X Magazine hopes to inform and engage the Sage Hill
+              students and community about the state of STEM, its transformative
+              effects on society, and its limitless possibilities in the future.
+            </p> -->
+            <div
+              style="text-overflow: clip;
+              overflow: hidden; 
+              width:  {(pageX / windowWidth) * 550}px; 
+              position: absolute;
+              height: 100%;
+              "
+            >
+              <p
+                style="
+              color: antiquewhite;
+              width: 550px;
+              background-color: black;
+              padding: 1rem;
+              border: 0.1rem solid rgba(255, 255, 255, 1);
+              border-radius: 1rem;
+              z-index: 0;
+              "
+              >
+                The Sage Tech-X Magazine hopes to inform and engage the Sage
+                Hill students and community about the state of STEM, its
+                transformative effects on society, and its limitless
+                possibilities in the future.
+              </p>
+            </div>
+            <p
+              style="
+              color: black;
+              width: 550px;
+              background-color: green;
+              padding: 1rem;
+              border: 0.1rem solid rgba(255, 255, 255, 1);
+              border-radius: 1rem;
+              position: absolute;
+              z-index: -1;
+              "
+            >
+              The Sage Tech-X Magazine hopes to inform and engage the Sage Hill
+              students and community about the state of STEM, its transformative
+              effects on society, and its limitless possibilities in the future.
+            </p>
+          </div>
+          <p>
+            Started in 2021, Minki Shin (class of 2022) created the Tech-X
+            Magazine with the intention to inspire an open and passionate STEM
+            community. The magazine gives students the opportunity to share
+            their interests and learn from others. The magazine helps students
+            develop their scientific communication. Learning how to distill
+            complex ideas into more digestable language is an important, yet
+            under-practiced, skill among many young STEM students.
+          </p>
+          <p>
+            If you're interested in contributing to the magazine, please contact
+            24robertsonk@sagehillschool.org.
+          </p>
+        </div>
+        <div
+          style="display: flex; flex-basis: 50%; align-content: center; justify-content: center; padding: 1rem;"
+        >
+          <img src="logo_white.svg" alt="logo" style="max-width: 50%;" />
+          {#if svgShow}
+            <svg viewBox="0 0 5 5" xmlns="http://www.w3.org/2000/svg">
+              <path
+                transition:draw={{ duration: 1500, easing: quintOut }}
+                d="M2 1 h1 v1 h1 v1 h-1 v1 h-1 v-1 h-1 v-1 h1 z"
+                fill="none"
+                stroke="cornflowerblue"
+                stroke-width="0.1px"
+              />
+            </svg>
+          {/if}
+        </div>
+      </div>
+    </ParallaxLayer>
+    <ParallaxLayer
+      rate={2}
+      offset={2}
+      style="
+    justify-content: flex-start;
+    gap: 2rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  "
+    >
+      <h1 style="margin: 0;">Meet our team.</h1>
+      <p
+        style="
+        color: antiquewhite;
+        max-width: 600px;
+        margin: 0;
+        text-align: center;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        "
+      >
+        The Sage Tech-X team consists of passionate members of the Sage Hill
+        community, who write, edit, and design the magazine.
+      </p>
+      <Team />
+    </ParallaxLayer>
+    <MediaQuery query="(min-width: 600px)" let:matches>
+      {#if matches}
+        <div class="default">
           {#each paths as pathInfo}
             <ParallaxLayer
               rate={pathInfo.rate}
               offset={0}
               style="
-          justify-content: flex-start; 
-          z-index: {pathInfo.z};
-          "
+              justify-content: flex-start; 
+              z-index: {pathInfo.z};
+              "
             >
               <svg
                 class="gr1"
@@ -187,106 +358,14 @@
             rate={1}
             offset={1}
             style="
-        justify-content: flex-start;
-        margin-top: 15rem;
-        align-items: left;
-        font-size: 2rem;
-        z-index: 2;
-        position: absolute;
-      "
-          >
-            <div
-              style="
-          padding-left: 4rem; 
-          padding-right: 4rem; 
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          position: absolute;
+            justify-content: flex-start;
+            margin-top: 15rem;
+            align-items: left;
+            font-size: 2rem;
+            z-index: 2;
+            position: absolute;
           "
-            >
-              <h1 style="text-align: left; margin: 0; padding: 0;">
-                Our Mission
-              </h1>
-              <p
-                style="
-            color: antiquewhite;
-            padding: 1rem;
-            line-height: 150%;
-            text-align: center;
-            font-size: 20px;
-            border: 2px solid rgba(255, 255, 255, 1);
-            border-radius: 1rem;
-            box-shadow: 0 0 10px rgb(255, 255, 255, 0.4);
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            "
-              >
-                The Sage Tech-X Magazine hopes to inform and engage the Sage
-                Hill students and community about the state of STEM, its
-                transformative effects on society, and its limitless
-                possibilities in the future.
-              </p>
-              <div
-                style="
-            display: flex;
-            flex-direction: row;
-            gap: 2rem;
-            justify-content: space-between;
-            align-content: center;
-            "
-              >
-                <p
-                  style="
-              display: flex;
-              justify-content: center; 
-              align-items: center; 
-              line-height: 200%;
-              text-align: left; 
-              padding: 1rem;
-              color: antiquewhite;
-              text-indent: 1rem;
-              border: 5px solid rgba(255, 255, 255, 0.1);
-              border-radius: 1rem;
-              background-color: #1212127a;
-              font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-              flex-basis: 50%;
-              "
-                >
-                  Started in 2021, Minki Shin (class of 2022) created the Tech-X
-                  Magazine with the intention to inspire an open and passionate
-                  STEM community. The magazine gives students the opportunity to
-                  share their interests and learn from others. The magazine
-                  helps students develop their scientific communication.
-                  Learning how to distill complex ideas into more digestable
-                  language is an important, yet under-practiced, skill among
-                  many young STEM students.
-                </p>
-                <div
-                  style="display: flex; flex-basis: 50%; align-content: center; justify-content: center; padding: 1rem;"
-                >
-                  <img
-                    src="logo_white.svg"
-                    alt="logo"
-                    style="max-width: 50%;"
-                  />
-                </div>
-              </div>
-              <p
-                style="
-            color: antiquewhite;
-            padding: 1rem;
-            line-height: 150%;
-            text-align: center;
-            border: 5px solid rgba(255, 255, 255, 0.1);
-            border-radius: 1rem;
-            background-color: #1212127a;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
-            "
-              >
-                If you're interested in contributing to the magazine, please
-                contact 24robertsonk@sagehillschool.org.
-              </p>
-            </div>
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="904"
@@ -334,138 +413,6 @@
               <ellipse cx="850" cy="400" rx="300" ry="400" fill="url(#G9)" />
             </svg>
           </ParallaxLayer>
-
-          <ParallaxLayer
-            rate={2}
-            offset={2}
-            style="
-        justify-content: flex-start;
-        gap: 2rem;
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        z-index: 3;
-        padding-left: 4rem;
-        padding-right: 4rem;
-      "
-          >
-            <h1 style="margin: 0;">Meet Our Team</h1>
-            <p
-              style="
-            color: antiquewhite;
-            max-width: 600px;
-            margin: 0;
-            line-height: 150%;
-            text-align: center;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            "
-            >
-              The Sage Tech-X team consists of passionate members of the Sage
-              Hill community, who write, edit, and design the magazine.
-            </p>
-            <div
-              style="
-        display: flex; 
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 2rem;
-        "
-            >
-              <div class="role" style="--color:var(--beige); flex-basis: 44%;">
-                <h>EDITORS</h>
-                <div class="cards">
-                  <div class="infoCard">
-                    <h2>Katherine Robertson</h2>
-                    <p>Years: 2021-Present</p>
-                    <p>Grade: Senior</p>
-                  </div>
-                  <div class="infoCard">
-                    <h2>Phoebe Pan</h2>
-                    <p>Years: 2022-Present</p>
-                    <p>Grade: Senior</p>
-                  </div>
-                </div>
-              </div>
-              <div class="role" style="--color: var(--lime); flex-basis: 44%;">
-                <h>GRAPHIC DESIGNERS</h>
-                <div class="cards">
-                  <div class="infoCard">
-                    <h2>Marcus Yoo</h2>
-                    <p>Years: 2021-Present</p>
-                    <p>Grade: Senior</p>
-                  </div>
-                  <div class="infoCard">
-                    <h2>Jennifer Huang</h2>
-                    <p>Years: 2022-Present</p>
-                    <p>Grade: Senior</p>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="role"
-                style="--color: var(--darker-accent); width: 100%;"
-              >
-                <h>WRITERS</h>
-                <div class="cards">
-                  <div class="infoCard">
-                    <h2>Nicole Ma</h2>
-                    <p>Years: 2022-Present</p>
-                    <p>Grade: Senior</p>
-                  </div>
-                  <div class="infoCard">
-                    <h2>Kevin Peng</h2>
-                    <p>Years: 2023-Present</p>
-                    <p>Grade: Junior</p>
-                  </div>
-                  <div class="infoCard">
-                    <h2>Oneal Wang</h2>
-                    <p>Years: 2022-Present</p>
-                    <p>Grade: Junior</p>
-                  </div>
-                  <div class="infoCard">
-                    <h2>Jacob Lynn</h2>
-                    <p>Years: 2022-Present</p>
-                    <p>Grade: Junior</p>
-                  </div>
-                  <div class="infoCard">
-                    <h2>Derek Zuo</h2>
-                    <p>Years: 2022-Present</p>
-                    <p>Grade: Junior</p>
-                  </div>
-                  <div class="infoCard">
-                    <h2>Julia Wen</h2>
-                    <p>Years: 2022-Present</p>
-                    <p>Grade: Senior</p>
-                  </div>
-                  <div class="infoCard">
-                    <h2>Melody Yu</h2>
-                    <p>Years: 2022-Present</p>
-                    <p>Grade: Junior</p>
-                  </div>
-                  <div class="infoCard">
-                    <h2>Basim Cheema-Sabir</h2>
-                    <p>Years: 2022-Present</p>
-                    <p>Grade: Senior</p>
-                  </div>
-                  <div class="infoCard">
-                    <h2>Alen Zhang</h2>
-                    <p>Years: 2022-Present</p>
-                    <p>Grade: Junior</p>
-                  </div>
-                  <div class="infoCard">
-                    <h2>Kai Patragnoni</h2>
-                    <p>Years: 2022-Present</p>
-                    <p>Grade: Senior</p>
-                  </div>
-                  <div class="infoCard">
-                    <h2>Kevin Hu</h2>
-                    <p>Years: 2022-Present</p>
-                    <p>Grade: Senior</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </ParallaxLayer>
           <ParallaxLayer offset={2} rate={2}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -513,469 +460,138 @@
               <ellipse cx="850" cy="400" rx="300" ry="400" fill="url(#G8)" />
             </svg>
           </ParallaxLayer>
-        </Parallax>
-      </div>
-    </div>
-  {/if}
-</MediaQuery>
-
-<MediaQuery query="(max-width: 600px)" let:matches>
-  {#if matches}
-    <div class="mobile">
-      <div class="container">
-        <Parallax sections={4} sectionHeight={0.5 * windowHeight}>
-          <ParallaxLayer
-            rate={1}
-            offset={0}
-            style="
-              display: flex; 
-              justify-items: center;
-              justify-content: center;
-              align-content: center;
-              align-items: center; 
-              flex-direction: column;
-            "
+        </div>
+      {/if}
+    </MediaQuery>
+    <MediaQuery query="(max-width: 600px)" let:matches>
+      {#if matches}
+        <ParallaxLayer offset={0}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="904"
+            height="2000"
+            viewBox="0 0 904 2000"
+            preserveAspectRatio="none"
           >
-            <h1
-              style="
-              text-align: center;
-              padding: 0;
-              margin: 0;
-              "
-            >
-              Sage Tech-X
-            </h1>
-            <h1
-              style="
-              text-align: center;
-              padding: 0;
-              margin: 0;
-              "
-            >
-              Magazine
-            </h1>
-          </ParallaxLayer>
+            <radialGradient id="G2" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+              <stop
+                offset="0%"
+                style="stop-color:var(--beige);    stop-opacity:0.3"
+              />
+              <stop
+                offset="100%"
+                style="stop-color:var(--beige); stop-opacity:0"
+              />
+            </radialGradient>
+            <ellipse cx="150" cy="500" rx="300" ry="300" fill="url(#G2)" />
 
-          <ParallaxLayer offset={0}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="904"
-              height="2000"
-              viewBox="0 0 904 2000"
-              preserveAspectRatio="none"
-            >
-              <radialGradient
-                id="G2"
-                cx="50%"
-                cy="50%"
-                r="50%"
-                fx="50%"
-                fy="50%"
-              >
-                <stop
-                  offset="0%"
-                  style="stop-color:var(--beige);    stop-opacity:0.3"
-                />
-                <stop
-                  offset="100%"
-                  style="stop-color:var(--beige); stop-opacity:0"
-                />
-              </radialGradient>
-              <ellipse cx="150" cy="500" rx="300" ry="300" fill="url(#G2)" />
-
-              <radialGradient
-                id="G3"
-                cx="50%"
-                cy="50%"
-                r="50%"
-                fx="50%"
-                fy="50%"
-              >
-                <stop
-                  offset="0%"
-                  style="stop-color:var(--primary-accent);    stop-opacity:0.5"
-                />
-                <stop
-                  offset="100%"
-                  style="stop-color:var(--darker-accent); stop-opacity:0"
-                />
-              </radialGradient>
-              <ellipse cx="850" cy="100" rx="300" ry="250" fill="url(#G3)" />
-            </svg>
-          </ParallaxLayer>
-          <ParallaxLayer
-            rate={1}
-            offset={1}
-            style="
-            justify-content: flex-start;
-            margin-top: 15rem;
-            align-items: left;
-            font-size: 2rem;
-            z-index: 2;
-            position: absolute;
-          "
+            <radialGradient id="G3" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+              <stop
+                offset="0%"
+                style="stop-color:var(--primary-accent);    stop-opacity:0.5"
+              />
+              <stop
+                offset="100%"
+                style="stop-color:var(--darker-accent); stop-opacity:0"
+              />
+            </radialGradient>
+            <ellipse cx="850" cy="100" rx="300" ry="250" fill="url(#G3)" />
+          </svg>
+        </ParallaxLayer>
+        <ParallaxLayer
+          rate={1}
+          offset={1}
+          style="
+                justify-content: flex-start;
+                margin-top: 15rem;
+                align-items: left;
+                font-size: 2rem;
+                z-index: 2;
+                position: absolute;
+              "
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="904"
+            height="2000"
+            viewBox="0 0 904 2000"
+            preserveAspectRatio="none"
+            style="position: absolute; z-index: -3;"
           >
-            <div
-              style="
-              padding-left: 2rem; 
-              padding-right: 2rem; 
-              display: flex;
-              flex-direction: column;
-              justify-content: space-between;
-              position: absolute;
-              "
-            >
-              <h1 style="text-align: left; margin: 0; padding: 0;">
-                Our Mission
-              </h1>
-              <p
-                style="
-                color: antiquewhite;
-                padding: 1rem;
-                line-height: 150%;
-                text-align: center;
-                border: 1px solid rgba(255, 255, 255, 0.3);
-                border-radius: 1rem;
-                box-shadow: 0 0 5px rgb(255, 255, 255, 0.4);
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                "
-              >
-                The Sage Tech-X Magazine hopes to inform and engage the Sage
-                Hill students and community about the state of STEM, its
-                transformative effects on society, and its limitless
-                possibilities in the future.
-              </p>
-              <div
-                style="
-                display: flex;
-                flex-direction: row;
-                gap: 2rem;
-                justify-content: space-between;
-                align-content: center;
-                "
-              >
-                <p
-                  style="
-                  display: flex;
-                  justify-content: center; 
-                  align-items: center; 
-                  line-height: 200%;
-                  text-align: left; 
-                  padding: 1rem;
-                  color: antiquewhite;
-                  text-indent: 1rem;
-                  border: 1px solid rgba(255, 255, 255, 0.1);
-                  border-radius: 0.5rem;
-                  background-color: #1212127a;
-                  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                  flex-basis: 100%;
-                  "
-                >
-                  Started in 2021, Minki Shin (class of 2022) created the Tech-X
-                  Magazine with the intention to inspire an open and passionate
-                  STEM community. The magazine gives students the opportunity to
-                  share their interests and learn from others. The magazine
-                  helps students develop their scientific communication.
-                  Learning how to distill complex ideas into more digestable
-                  language is an important, yet under-practiced, skill among
-                  many young STEM students.
-                </p>
-              </div>
-              <p
-                style="
-                color: antiquewhite;
-                padding: 1rem;
-                line-height: 150%;
-                text-align: center;
-                border: 1px solid rgba(255, 255, 255, 0.1);
-                border-radius: 0.5rem;
-                background-color: #1212127a;
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
-                "
-              >
-                If you're interested in contributing to the magazine, please
-                contact 24robertsonk@sagehillschool.org.
-              </p>
-            </div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="904"
-              height="2000"
-              viewBox="0 0 904 2000"
-              preserveAspectRatio="none"
-              style="position: absolute; z-index: -3;"
-            >
-              <radialGradient
-                id="G4"
-                cx="50%"
-                cy="50%"
-                r="50%"
-                fx="50%"
-                fy="50%"
-              >
-                <stop
-                  offset="0%"
-                  style="stop-color:var(--primary-color);    stop-opacity:0.5"
-                />
-                <stop
-                  offset="100%"
-                  style="stop-color:var(--primary-accent); stop-opacity:0"
-                />
-              </radialGradient>
-              <ellipse cx="0" cy="500" rx="500" ry="300" fill="url(#G4)" />
-            </svg>
-          </ParallaxLayer>
+            <radialGradient id="G4" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+              <stop
+                offset="0%"
+                style="stop-color:var(--primary-color);    stop-opacity:0.5"
+              />
+              <stop
+                offset="100%"
+                style="stop-color:var(--primary-accent); stop-opacity:0"
+              />
+            </radialGradient>
+            <ellipse cx="0" cy="500" rx="500" ry="300" fill="url(#G4)" />
+          </svg>
+        </ParallaxLayer>
 
-          <ParallaxLayer
-            rate={2}
-            offset={2}
-            style="
-            justify-content: flex-start;
-            gap: 1rem;
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-            z-index: 3;
-            padding-left: 2rem;
-            padding-right: 2rem;
-          "
+        <ParallaxLayer offset={2} rate={2}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="904"
+            height="2000"
+            viewBox="0 0 904 2000"
+            preserveAspectRatio="none"
           >
-            <h1 style="margin: 0;">Meet Our Team</h1>
-            <p
-              style="
-                color: antiquewhite;
-                max-width: 600px;
-                margin: 0;
-                line-height: 150%;
-                text-align: center;
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                "
-            >
-              The Sage Tech-X team consists of passionate members of the Sage
-              Hill community, who write, edit, and design the magazine.
-            </p>
-            <div
-              style="
-            display: flex; 
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 2rem;
-            "
-            >
-              <div class="role" style="--color:var(--beige); flex-grow: 1;">
-                <h>EDITORS</h>
-                <div class="cards">
-                  <div class="infoCard">
-                    <h2>Katherine Robertson</h2>
-                    <p>Years: 2021-Present</p>
-                    <p>Grade: Senior</p>
-                  </div>
-                  <div class="infoCard">
-                    <h2>Phoebe Pan</h2>
-                    <p>Years: 2022-Present</p>
-                    <p>Grade: Senior</p>
-                  </div>
-                </div>
-              </div>
-              <div class="role" style="--color: var(--lime); flex-grow: 1;">
-                <h>GRAPHIC DESIGNERS</h>
-                <div class="cards">
-                  <div class="infoCard">
-                    <h2>Marcus Yoo</h2>
-                    <p>Years: 2021-Present</p>
-                    <p>Grade: Senior</p>
-                  </div>
-                  <div class="infoCard">
-                    <h2>Jennifer Huang</h2>
-                    <p>Years: 2022-Present</p>
-                    <p>Grade: Senior</p>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="role"
-                style="--color: var(--darker-accent); width: 100%;"
-              >
-                <h>WRITERS</h>
-                <div class="cards">
-                  <div class="infoCard">
-                    <h2>Nicole Ma</h2>
-                    <p>Years: 2022-Present</p>
-                    <p>Grade: Senior</p>
-                  </div>
-                  <div class="infoCard">
-                    <h2>Kevin Peng</h2>
-                    <p>Years: 2023-Present</p>
-                    <p>Grade: Junior</p>
-                  </div>
-                  <div class="infoCard">
-                    <h2>Oneal Wang</h2>
-                    <p>Years: 2022-Present</p>
-                    <p>Grade: Junior</p>
-                  </div>
-                  <div class="infoCard">
-                    <h2>Jacob Lynn</h2>
-                    <p>Years: 2022-Present</p>
-                    <p>Grade: Junior</p>
-                  </div>
-                  <div class="infoCard">
-                    <h2>Derek Zuo</h2>
-                    <p>Years: 2022-Present</p>
-                    <p>Grade: Junior</p>
-                  </div>
-                  <div class="infoCard">
-                    <h2>Julia Wen</h2>
-                    <p>Years: 2022-Present</p>
-                    <p>Grade: Senior</p>
-                  </div>
-                  <div class="infoCard">
-                    <h2>Melody Yu</h2>
-                    <p>Years: 2022-Present</p>
-                    <p>Grade: Junior</p>
-                  </div>
-                  <div class="infoCard">
-                    <h2>Basim Cheema-Sabir</h2>
-                    <p>Years: 2022-Present</p>
-                    <p>Grade: Senior</p>
-                  </div>
-                  <div class="infoCard">
-                    <h2>Alen Zhang</h2>
-                    <p>Years: 2022-Present</p>
-                    <p>Grade: Junior</p>
-                  </div>
-                  <div class="infoCard">
-                    <h2>Kai Patragnoni</h2>
-                    <p>Years: 2022-Present</p>
-                    <p>Grade: Senior</p>
-                  </div>
-                  <div class="infoCard">
-                    <h2>Kevin Hu</h2>
-                    <p>Years: 2022-Present</p>
-                    <p>Grade: Senior</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </ParallaxLayer>
-          <ParallaxLayer offset={2} rate={2}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="904"
-              height="2000"
-              viewBox="0 0 904 2000"
-              preserveAspectRatio="none"
-            >
-              <radialGradient
-                id="G5"
-                cx="50%"
-                cy="50%"
-                r="50%"
-                fx="50%"
-                fy="50%"
-              >
-                <stop
-                  offset="0%"
-                  style="stop-color:var(--primary-color);    stop-opacity:0.3"
-                />
-                <stop
-                  offset="100%"
-                  style="stop-color:var(--beige); stop-opacity:0"
-                />
-              </radialGradient>
-              <ellipse cx="100" cy="550" rx="350" ry="350" fill="url(#G5)" />
+            <radialGradient id="G5" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+              <stop
+                offset="0%"
+                style="stop-color:var(--primary-color);    stop-opacity:0.3"
+              />
+              <stop
+                offset="100%"
+                style="stop-color:var(--beige); stop-opacity:0"
+              />
+            </radialGradient>
+            <ellipse cx="100" cy="550" rx="350" ry="350" fill="url(#G5)" />
 
-              <radialGradient
-                id="G8"
-                cx="50%"
-                cy="50%"
-                r="50%"
-                fx="50%"
-                fy="50%"
-              >
-                <stop
-                  offset="0%"
-                  style="stop-color:var(--darker-accent);    stop-opacity:0.3"
-                />
-                <stop
-                  offset="100%"
-                  style="stop-color:var(--lime); stop-opacity:0"
-                />
-              </radialGradient>
-              <ellipse cx="850" cy="400" rx="300" ry="400" fill="url(#G8)" />
-            </svg>
-          </ParallaxLayer>
-        </Parallax>
-      </div>
-    </div>
-  {/if}
-</MediaQuery>
-
-<svelte:window bind:outerHeight={windowHeight} />
+            <radialGradient id="G8" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+              <stop
+                offset="0%"
+                style="stop-color:var(--darker-accent);    stop-opacity:0.3"
+              />
+              <stop
+                offset="100%"
+                style="stop-color:var(--lime); stop-opacity:0"
+              />
+            </radialGradient>
+            <ellipse cx="850" cy="400" rx="300" ry="400" fill="url(#G8)" />
+          </svg>
+        </ParallaxLayer>
+      {/if}
+    </MediaQuery>
+  </Parallax>
+</div>
 
 <style>
-  .mobile h1 {
-    font-family: Bodoni Moda;
-    font-size: 2rem;
-    color: antiquewhite;
-  }
-  .mobile p {
+  :global(html) {
     font-size: 10px;
   }
 
-  .mobile .infoCard {
-    border: 1px solid rgba(215, 218, 250, 0.343);
-    border-radius: 0.5rem;
-    padding: 0.1rem;
-    background-color: #1f1f1f;
+  @media (min-width: 600px) {
+    :global(html) {
+      font-size: 16px;
+    }
   }
-  .mobile .role {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: #1212127a;
-    border-radius: 1rem;
-    padding: 0.3rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
+  h1 {
+    font-family: Lato;
+    line-height: 120%;
+    font-size: 6rem;
+    letter-spacing: -0.1rem;
+    color: antiquewhite;
   }
-  .mobile .role h {
-    color: var(--color, #ddd);
-    font-family: "Courier New", Courier, monospace;
-    font-style: bold;
-    font-size: 15px;
-    text-align: center;
+  p {
+    font-size: 1rem;
+    line-height: 150%;
   }
 
-  .mobile .cards {
-    padding: 0.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    gap: 0.2rem;
-  }
-  .mobile .infoCard h2 {
-    color: antiquewhite;
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-      "Lucida Sans", Arial, sans-serif;
-    font-size: 10px;
-    text-align: left;
-    line-height: 100%;
-  }
-  .mobile .infoCard p {
-    color: antiquewhite;
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-      "Lucida Sans", Arial, sans-serif;
-    font-size: 8px;
-    text-align: left;
-  }
-
-  .default h1 {
-    font-family: Bodoni Moda;
-    font-size: 5rem;
-    color: antiquewhite;
-  }
   .container {
     width: 100%;
     height: 100%;
@@ -989,55 +605,5 @@
   }
   svg {
     width: 100%;
-  }
-  .default .infoCard {
-    border: 3px solid rgba(215, 218, 250, 0.343);
-    border-radius: 1rem;
-    padding: 0.5rem;
-    background-color: #1f1f1f;
-  }
-  .default .role {
-    border: 5px solid rgba(255, 255, 255, 0.1);
-    background: #1212127a;
-    border-radius: 1rem;
-    padding: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-  }
-  .default .role h {
-    color: var(--color, #ddd);
-    font-family: "Courier New", Courier, monospace;
-    font-style: bold;
-    font-size: 35px;
-    text-align: center;
-  }
-  .default p {
-    font-size: 20px;
-  }
-  .default .cards {
-    padding: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    gap: 1rem;
-  }
-  .default .infoCard h2 {
-    color: antiquewhite;
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-      "Lucida Sans", Arial, sans-serif;
-    font-size: 20px;
-    text-align: left;
-    line-height: 100%;
-  }
-  .default .infoCard p {
-    color: antiquewhite;
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-      "Lucida Sans", Arial, sans-serif;
-    font-size: 15px;
-    text-align: left;
   }
 </style>

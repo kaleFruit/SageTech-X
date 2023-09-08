@@ -456,6 +456,16 @@
 </MediaQuery>
 
 <style>
+  :global(html) {
+    font-size: 10px;
+  }
+
+  @media (min-width: 600px) {
+    :global(html) {
+      font-size: 15px;
+    }
+  }
+
   .default .issue {
     display: flex;
     justify-content: space-between;
