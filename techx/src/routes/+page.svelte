@@ -2,8 +2,6 @@
   import { Parallax, ParallaxLayer } from "svelte-parallax";
   import Page from "./about/+page.svelte";
   import MediaQuery from "../MediaQuery.svelte";
-  import { draw } from "svelte/transition";
-  import { quintOut } from "svelte/easing";
   import Team from "./team.svelte";
 
   let windowHeight = 0;
