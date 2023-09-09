@@ -1,6 +1,5 @@
 <script>
   import { useMousePosition } from "@svelteuidev/composables";
-
   const [position, ref] = useMousePosition();
   $: ({ x, y } = $position);
 </script>

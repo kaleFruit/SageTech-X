@@ -1,29 +1,11 @@
 <nav>
-  <span style="text-align: right; flex-basis: 45%;"><a href="/">HOME</a> </span>
-  <span style="text-align: left;  flex-basis: 45%;"
-    ><a href="/about">ARCHIVES</a></span
-  >
+  <img src="logo_white.svg" alt="logo" height="30px" width="30px" />
+  <a href="/">HOME</a>
+  <a href="/about">ARCHIVES</a>
 </nav>
-<img
-  src="logo_white.svg"
-  alt="logo"
-  height="30px"
-  width="30px"
-  style="position: absolute; left: 0; right: 0; margin: auto; top: 0.5rem;"
-/>
 <slot />
 
 <svelte:head>
-  <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin="anonymous"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&display=swap"
-    rel="stylesheet"
-  /> -->
   <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Lato&family=Mulish"
@@ -48,21 +30,47 @@
     color: antiquewhite;
     background-color: rgb(5, 11, 3);
   }
+
+  :global(html) {
+    font-size: 10px;
+  }
+
+  @media (min-width: 600px) {
+    :global(html) {
+      font-size: 16px;
+    }
+  }
+
+  :global(h1) {
+    font-family: Lato;
+    line-height: 120%;
+    font-size: 6rem;
+    letter-spacing: -0.1rem;
+    color: antiquewhite;
+  }
+
+  :global(p) {
+    font-size: 1rem;
+    line-height: 150%;
+  }
+
   nav {
-    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     background-color: transparent;
-    border-radius: 0.5rem;
+    align-items: center;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    gap: 75px;
+    padding-left: 1rem;
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+    border-radius: 0.5rem;
+    gap: 1rem;
   }
   a {
     position: relative;
     text-decoration: none;
     color: antiquewhite;
-    font-family: "Courier New", Courier, monospace;
-    font-size: 1rem;
+    font-family: Lato;
+    font-size: 0.75rem;
   }
 </style>

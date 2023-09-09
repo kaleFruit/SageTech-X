@@ -54,7 +54,7 @@
   let scroll = 0;
   let svgShow = false;
 
-  $: if (scroll > 1000) {
+  $: if (scroll > 800) {
     svgShow = true;
   }
 </script>
@@ -107,59 +107,38 @@
             margin-top: 15rem;
             align-items: left;
             font-size: 2rem;
-            z-index: 2;
+            z-index: 3;
             position: absolute;
             padding-left: 4rem; 
             padding-right: 4rem; 
           "
     >
-      <!-- <div
-        style="display: flex; width: 100%; height: 100%; position: absolute;"
-      >
-        <div
-          style="background-color: green; flex-basis: {(pageX / windowWidth) *
-            100}%; height: 100%;"
-        />
-      </div> -->
       <h1 style="text-align: left;">Our mission.</h1>
       <div style="display: flex;">
         <div
           style="
         display: flex;
+        flex-basis: 50%;
         flex-direction: column;
         justify-content: space-between;
-        width: 550px;
+        width: 35rem;
         "
         >
-          <div style="height: 100%; padding: 0; margin: 0;">
-            <!-- <p
-              style="
-              color: antiquewhite;
-              padding: 1rem;
-              background: linear-gradient(to right, var(--primary-color)  {(pageX /
-                windowWidth) *
-                100}%, black  {(pageX / windowWidth) * 100}%);
-              border: 0.1rem solid rgba(255, 255, 255, 1);
-              border-radius: 1rem;
-              "
-            >
-              The Sage Tech-X Magazine hopes to inform and engage the Sage Hill
-              students and community about the state of STEM, its transformative
-              effects on society, and its limitless possibilities in the future.
-            </p> -->
+          <div style="display: grid;">
             <div
               style="text-overflow: clip;
               overflow: hidden; 
-              width:  {(pageX / windowWidth) * 550}px; 
-              position: absolute;
+              width:  {((pageX * 1.5) / windowWidth) * 35}rem; 
+              grid-column: 1;
+              grid-row: 1;
               height: 100%;
               "
             >
               <p
                 style="
-              color: antiquewhite;
-              width: 550px;
-              background-color: black;
+              color: black;
+              width: 35rem;
+              background-color: var(--primary-color);
               padding: 1rem;
               border: 0.1rem solid rgba(255, 255, 255, 1);
               border-radius: 1rem;
@@ -174,13 +153,14 @@
             </div>
             <p
               style="
-              color: black;
-              width: 550px;
-              background-color: green;
+              color: antiquewhite;
+              width: 35rem;
+              background-color: black;
               padding: 1rem;
               border: 0.1rem solid rgba(255, 255, 255, 1);
               border-radius: 1rem;
-              position: absolute;
+              grid-column: 1;
+              grid-row: 1;
               z-index: -1;
               "
             >
@@ -202,22 +182,6 @@
             If you're interested in contributing to the magazine, please contact
             24robertsonk@sagehillschool.org.
           </p>
-        </div>
-        <div
-          style="display: flex; flex-basis: 50%; align-content: center; justify-content: center; padding: 1rem;"
-        >
-          <img src="logo_white.svg" alt="logo" style="max-width: 50%;" />
-          {#if svgShow}
-            <svg viewBox="0 0 5 5" xmlns="http://www.w3.org/2000/svg">
-              <path
-                transition:draw={{ duration: 1500, easing: quintOut }}
-                d="M2 1 h1 v1 h1 v1 h-1 v1 h-1 v-1 h-1 v-1 h1 z"
-                fill="none"
-                stroke="cornflowerblue"
-                stroke-width="0.1px"
-              />
-            </svg>
-          {/if}
         </div>
       </div>
     </ParallaxLayer>
@@ -413,6 +377,25 @@
               <ellipse cx="850" cy="400" rx="300" ry="400" fill="url(#G9)" />
             </svg>
           </ParallaxLayer>
+          <ParallaxLayer
+            rate={1.5}
+            offset={1}
+            style="
+            margin-top: 15rem;
+            align-items: right;
+            font-size: 2rem;
+            z-index: 3;
+            position: absolute;
+            padding-right: 8rem; 
+            padding-top: 18rem;
+          "
+          >
+            <img
+              src="logo_white.svg"
+              alt="logo"
+              style="width: 20rem; float: right;"
+            />
+          </ParallaxLayer>
           <ParallaxLayer offset={2} rate={2}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -571,27 +554,6 @@
 </div>
 
 <style>
-  :global(html) {
-    font-size: 10px;
-  }
-
-  @media (min-width: 600px) {
-    :global(html) {
-      font-size: 16px;
-    }
-  }
-  h1 {
-    font-family: Lato;
-    line-height: 120%;
-    font-size: 6rem;
-    letter-spacing: -0.1rem;
-    color: antiquewhite;
-  }
-  p {
-    font-size: 1rem;
-    line-height: 150%;
-  }
-
   .container {
     width: 100%;
     height: 100%;

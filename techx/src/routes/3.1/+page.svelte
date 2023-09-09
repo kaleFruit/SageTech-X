@@ -9,20 +9,12 @@
     offset={0}
     style="
         display: flex; 
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center; 
-        flex-direction: column;
         margin-top: 0.5rem;
     "
   >
     <h1 style="text-align: center;">Volume 3 Issue 2</h1>
-    <div class="page">
-      <img
-        class="cover"
-        src="3.2\finalTechX2023sem2-part-11024_1.jpg"
-        alt="page1"
-      />
-    </div>
   </ParallaxLayer>
 
   <ParallaxLayer rate={0.5} offset={1}>
@@ -159,7 +151,12 @@
   <ParallaxLayer rate={0.5} offset={8}>
     <div style="display: flex; justify-content: center;">
       <img
-        class="cover"
+        class="photo"
+        src="3.2\finalTechX2023sem2-part-11024_1.jpg"
+        alt="page1"
+      />
+      <img
+        class="photo"
         src="3.2\finalTechX2023sem2-part-161024_1.jpg"
         alt="page1"
       />
@@ -171,16 +168,6 @@
   .photo {
     width: 30rem;
   }
-  .cover {
-    width: 15rem;
-  }
-
-  h1 {
-    font-family: Bodoni Moda;
-    font-size: 5rem;
-    color: antiquewhite;
-  }
-
   .stars {
     width: var(--size);
     height: var(--size);
