@@ -2,6 +2,7 @@
   import { Parallax, ParallaxLayer } from "svelte-parallax";
   import Page from "./about/+page.svelte";
   import MediaQuery from "../MediaQuery.svelte";
+
   import Team from "./team.svelte";
 
   let windowHeight = 0;
@@ -119,14 +120,14 @@
         flex-basis: 50%;
         flex-direction: column;
         justify-content: space-between;
-        width: 35rem;
+        max-width: 30rem;
         "
         >
           <div style="display: grid;">
             <div
               style="text-overflow: clip;
               overflow: hidden; 
-              width:  {((pageX * 1.5) / windowWidth) * 35}rem; 
+              width:  {((pageX * 1.5) / windowWidth) * 30}rem; 
               grid-column: 1;
               grid-row: 1;
               height: 100%;
@@ -135,7 +136,7 @@
               <p
                 style="
               color: black;
-              width: 35rem;
+              width: 30rem;
               background-color: var(--primary-color);
               padding: 1rem;
               border: 0.1rem solid rgba(255, 255, 255, 1);
@@ -152,7 +153,7 @@
             <p
               style="
               color: antiquewhite;
-              width: 35rem;
+              width: 30rem;
               background-color: black;
               padding: 1rem;
               border: 0.1rem solid rgba(255, 255, 255, 1);
@@ -384,7 +385,7 @@
             font-size: 2rem;
             z-index: 3;
             position: absolute;
-            padding-right: 8rem; 
+            padding-right: 12rem; 
             padding-top: 18rem;
           "
           >
