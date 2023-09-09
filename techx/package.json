@@ -23,6 +23,6 @@
 	"type": "module",
 	"dependencies": {
 		"@svelteuidev/composables": "^0.15.3",
-		"esbuild-svelte": "^0.8.0"
+		"esbuild": "^0.19.2"
 	}
 }
