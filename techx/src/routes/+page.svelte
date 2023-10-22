@@ -449,6 +449,9 @@
     <MediaQuery query="(max-width: 600px)" let:matches>
       {#if matches}
         <ParallaxLayer offset={0}>
+          <p style="text-align: center; font-style: italic; color:chartreuse">
+            For the best viewing experience, please move to desktop
+          </p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="904"
