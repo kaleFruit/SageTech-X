@@ -179,7 +179,7 @@
           </p>
           <p>
             If you're interested in contributing to the magazine, please contact
-            24robertsonk@sagehillschool.org.
+            our current editor-in-chief: 24robertsonk@sagehillschool.org.
           </p>
         </div>
       </div>
@@ -209,7 +209,8 @@
         "
       >
         The Sage Tech-X team consists of passionate members of the Sage Hill
-        community, who write, edit, and design the magazine.
+        community, who write, edit, and design the magazine. Special thanks to
+        Mr. Parker, our club advisor!
       </p>
       <Team />
     </ParallaxLayer>

@@ -14,8 +14,7 @@
         margin-top: 0.5rem;
     "
   >
-    <h1 style="text-align: center;">Volume 3 Issue 1</h1>
-    <h2>(CURRENTLY UNDER MAINTANENCE)</h2>
+    <h1 style="text-align: center;">Volume 3 Issue 2</h1>
   </ParallaxLayer>
 
   <ParallaxLayer rate={0.5} offset={1}>
