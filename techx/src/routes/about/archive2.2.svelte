@@ -23,13 +23,13 @@
         <li>Why eSports Should be Taken Seriously</li>
       </ul>
       <ul style="list-style-type: none; text-align: left; flex-basis: 45%;">
-        <li>Minki Shin</li>
         <li>Katherine Robertson</li>
-        <li>Marcus Yoo</li>
+        <li>Minki Shin</li>
+        <li>Minki Shin</li>
+        <li>Ridwan Simjee</li>
         <li>Anton Nguyen</li>
+        <li>Minki Shin</li>
         <li>Nic Eimani</li>
-        <li>Keyon Sabahi</li>
-        <li>Peter Huang</li>
       </ul>
     </div>
   </div>
@@ -41,6 +41,9 @@
     <h2 style="color: var(--beige);">EDITORS</h2>
     <ul>
       <li>Minki Shin (EIC)</li>
+      <li>Gabe McNeil</li>
+      <li>Peter Huang</li>
+      <li>Keyon Sabahi</li>
     </ul>
   </div>
   <div

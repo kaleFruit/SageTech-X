@@ -30,6 +30,8 @@
         <li>Alen Zhang</li>
         <li>Katherine Robertson</li>
         <li>Kai Patragnoni</li>
+        <li>Nicole Ma</li>
+        <li>Nicole Ma</li>
       </ul>
     </div>
   </div>

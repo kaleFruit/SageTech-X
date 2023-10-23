@@ -23,14 +23,13 @@
         <li>E Review</li>
       </ul>
       <ul style="list-style-type: none; text-align: left; flex-basis: 45%;">
+        <li>Katherine Robertson</li>
+        <li>Minki Shin</li>
         <li>Minki Shin</li>
         <li>Ridwan Simjee</li>
-        <li>Katherine Robertson</li>
-        <li>Gabe McNeil</li>
-        <li>Anton Nguyen</li>
-        <li>Nic Eimani</li>
+        <li>Minki Shin</li>
+        <li>Minki Shin</li>
         <li>Keyon Sabahi</li>
-        <li>Peter Huang</li>
       </ul>
     </div>
   </div>
@@ -42,6 +41,10 @@
     <h2 style="color: var(--beige);">EDITORS</h2>
     <ul>
       <li>Minki Shin (EIC)</li>
+      <li>Anton Nguyen</li>
+      <li>Peter Huang</li>
+      <li>Nic Eimani</li>
+      <li>Marcus Yoo</li>
     </ul>
   </div>
   <div
@@ -63,7 +66,7 @@
     gap: 2rem;
     flex-wrap: wrap;
     color: antiquewhite;
-    padding: 2rem;
+    padding: 2rem 2rem 2rem 2rem;
     text-align: center;
     border: 0.3rem solid rgba(255, 255, 255, 0.2);
     border-radius: 1rem;
@@ -79,7 +82,7 @@
     border: 0.1rem solid rgba(255, 255, 255, 0.423);
     border-radius: 1rem;
     background-color: #2e2e2e34;
-    padding: 1rem;
+    padding: 1rem 1rem 1rem 1rem;
   }
 
   .subbox:hover {

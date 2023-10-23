@@ -14,7 +14,7 @@
 <svelte:window bind:outerHeight={windowHeight} />
 
 <div class="container">
-  <Parallax sections={totalNumEditions} sectionHeight={1 * windowHeight}>
+  <Parallax sections={totalNumEditions + 1} sectionHeight={1 * windowHeight}>
     <ParallaxLayer
       rate={1}
       offset={0}
@@ -45,7 +45,7 @@
     </ParallaxLayer>
     <ParallaxLayer rate={0.5} offset={totalNumEditions - 2}>
       <div class="edition">
-        <Edition22 />
+        <Edition21 />
       </div>
     </ParallaxLayer>
     <ParallaxLayer rate={0.5} offset={totalNumEditions - 1}>

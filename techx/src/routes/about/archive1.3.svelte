@@ -23,13 +23,13 @@
         <li>Sony WH-100MX4 Headphone Review</li>
       </ul>
       <ul style="list-style-type: none; text-align: left; flex-basis: 45%;">
+        <li>Nic Eimani</li>
+        <li>Katherine Robertson</li>
         <li>Minki Shin</li>
         <li>Ridwan Simjee</li>
-        <li>Peter Huang</li>
-        <li>Katherine Robertson</li>
-        <li>Nico Luo</li>
-        <li>Keyon Sabahi</li>
         <li>Nic Eimani</li>
+        <li>Peter Huang</li>
+        <li>Minki Shin</li>
       </ul>
     </div>
   </div>
@@ -41,6 +41,8 @@
     <h2 style="color: var(--beige);">EDITORS</h2>
     <ul>
       <li>Minki Shin (EIC)</li>
+      <li>Nico Luo</li>
+      <li>Keyon Sabahi</li>
     </ul>
   </div>
   <div
