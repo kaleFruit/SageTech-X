@@ -8,8 +8,9 @@
   import Edition22 from "./archive2.2.svelte";
   import Edition21 from "./archive2.1.svelte";
   import Edition13 from "./archive1.3.svelte";
+  import Edition12 from "./archive1.2.svelte";
   import Edition11 from "./archive1.1.svelte";
-  let totalNumEditions = 6;
+  let totalNumEditions = 7;
 </script>
 
 <svelte:window bind:outerHeight={windowHeight} />
@@ -29,29 +30,34 @@
     >
       <h1 style="text-align: center;">Archives</h1>
     </ParallaxLayer>
-    <ParallaxLayer rate={0.5} offset={totalNumEditions - 5}>
+    <ParallaxLayer rate={0.5} offset={totalNumEditions - 6}>
       <div class="edition">
         <Edition32 />
       </div>
     </ParallaxLayer>
-    <ParallaxLayer rate={0.5} offset={totalNumEditions - 4}>
+    <ParallaxLayer rate={0.5} offset={totalNumEditions - 5}>
       <div class="edition">
         <Edition31 />
       </div>
     </ParallaxLayer>
-    <ParallaxLayer rate={0.5} offset={totalNumEditions - 3}>
+    <ParallaxLayer rate={0.5} offset={totalNumEditions - 4}>
       <div class="edition">
         <Edition22 />
       </div>
     </ParallaxLayer>
-    <ParallaxLayer rate={0.5} offset={totalNumEditions - 2}>
+    <ParallaxLayer rate={0.5} offset={totalNumEditions - 3}>
       <div class="edition">
         <Edition21 />
       </div>
     </ParallaxLayer>
-    <ParallaxLayer rate={0.5} offset={totalNumEditions - 1}>
+    <ParallaxLayer rate={0.5} offset={totalNumEditions - 2}>
       <div class="edition">
         <Edition13 />
+      </div>
+    </ParallaxLayer>
+    <ParallaxLayer rate={0.5} offset={totalNumEditions - 1}>
+      <div class="edition">
+        <Edition12 />
       </div>
     </ParallaxLayer>
     <ParallaxLayer rate={0.5} offset={totalNumEditions}>
