@@ -16,8 +16,21 @@
   >
     <h1 style="text-align: center;">Volume 3 Issue 2</h1>
   </ParallaxLayer>
-
   <ParallaxLayer rate={0.5} offset={1}>
+    <div style="display: flex; justify-content: center;">
+      <img
+        class="photo"
+        src="3.2/finalTechX2023sem2-part-11024_1.jpg"
+        alt="page1"
+      />
+      <img
+        class="photo"
+        src="3.2/finalTechX2023sem2-part-161024_1.jpg"
+        alt="page1"
+      />
+    </div>
+  </ParallaxLayer>
+  <ParallaxLayer rate={0.5} offset={2}>
     <div style="display: flex; justify-content: center;">
       <img
         class="photo"
@@ -58,7 +71,7 @@
       style="width: 250px; float: right; transform: scaleX(-1); margin-top: 20rem;"
     />
   </ParallaxLayer>
-  <ParallaxLayer rate={0.5} offset={2}>
+  <ParallaxLayer rate={0.5} offset={3}>
     <div style="display: flex; justify-content: center;">
       <img
         class="photo"
@@ -73,7 +86,7 @@
     </div>
   </ParallaxLayer>
 
-  <ParallaxLayer rate={0.5} offset={3}>
+  <ParallaxLayer rate={0.5} offset={4}>
     <div style="display: flex; justify-content: center;">
       <img
         class="photo"
@@ -88,7 +101,7 @@
     </div>
   </ParallaxLayer>
 
-  <ParallaxLayer rate={0.5} offset={4}>
+  <ParallaxLayer rate={0.5} offset={5}>
     <div style="display: flex; justify-content: center;">
       <img
         class="photo"
@@ -103,7 +116,7 @@
     </div>
   </ParallaxLayer>
 
-  <ParallaxLayer rate={0.5} offset={5}>
+  <ParallaxLayer rate={0.5} offset={6}>
     <div style="display: flex; justify-content: center;">
       <img
         class="photo"
@@ -118,7 +131,7 @@
     </div>
   </ParallaxLayer>
 
-  <ParallaxLayer rate={0.5} offset={6}>
+  <ParallaxLayer rate={0.5} offset={7}>
     <div style="display: flex; justify-content: center;">
       <img
         class="photo"
@@ -133,7 +146,7 @@
     </div>
   </ParallaxLayer>
 
-  <ParallaxLayer rate={0.5} offset={7}>
+  <ParallaxLayer rate={0.5} offset={8}>
     <div style="display: flex; justify-content: center;">
       <img
         class="photo"
@@ -143,21 +156,6 @@
       <img
         class="photo"
         src="3.2/finalTechX2023sem2-part-151024_1.jpg"
-        alt="page1"
-      />
-    </div>
-  </ParallaxLayer>
-
-  <ParallaxLayer rate={0.5} offset={8}>
-    <div style="display: flex; justify-content: center;">
-      <img
-        class="photo"
-        src="3.2/finalTechX2023sem2-part-11024_1.jpg"
-        alt="page1"
-      />
-      <img
-        class="photo"
-        src="3.2/finalTechX2023sem2-part-161024_1.jpg"
         alt="page1"
       />
     </div>
