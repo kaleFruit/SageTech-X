@@ -386,15 +386,21 @@
             font-size: 2rem;
             z-index: 3;
             position: absolute;
-            padding-right: 12rem; 
-            padding-top: 18rem;
+            padding-right: 8rem; 
+            padding-top: 17rem;
           "
           >
-            <img
-              src="logo_white.svg"
-              alt="logo"
-              style="width: 20rem; float: right;"
-            />
+            <div
+              style="float: right; display: grid; justify-items: center;
+              justify-content: center;             
+              flex-direction: column;"
+            >
+              <img
+                src="photoofmagazines.jpg"
+                alt="logo"
+                style="width: 30rem; border-radius: 2rem;"
+              />
+            </div>
           </ParallaxLayer>
           <ParallaxLayer offset={2} rate={2}>
             <svg
