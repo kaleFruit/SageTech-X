@@ -238,7 +238,7 @@
                 <filter id="grain">
                   <feTurbulence
                     type="fractalNoise"
-                    baseFrequency="3"
+                    baseFrequency="6"
                     stitchTiles="stitch"
                   />
                   <feColorMatrix
