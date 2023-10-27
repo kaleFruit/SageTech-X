@@ -99,7 +99,14 @@
 </Parallax>
 
 <style>
-  .photo {
-    width: 30rem;
+  @media (max-width: 800px) {
+    .photo {
+      width: 15rem;
+    }
+  }
+  @media (min-width: 800px) {
+    .photo {
+      width: 30rem;
+    }
   }
 </style>

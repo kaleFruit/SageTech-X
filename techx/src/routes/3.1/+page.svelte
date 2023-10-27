@@ -96,9 +96,17 @@
 </Parallax>
 
 <style>
-  .photo {
-    width: 60rem;
+  @media (max-width: 800px) {
+    .photo {
+      width: 30rem;
+    }
   }
+  @media (min-width: 800px) {
+    .photo {
+      width: 60rem;
+    }
+  }
+
   .stars {
     width: var(--size);
     height: var(--size);
