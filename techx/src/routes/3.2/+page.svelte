@@ -64,7 +64,7 @@
       </ParallaxLayer>
     {/each}
   {/each}
-  <ParallaxLayer offset={1} rate={1.5}>
+  <ParallaxLayer offset={1} rate={1.5} style="z-index: 1;">
     <img
       src="3.2/3.2supplemental/jwstmodel.png"
       alt="jwst"

@@ -67,23 +67,12 @@
 
 <div class="container">
   <Parallax sections={4.5} sectionHeight={0.8 * windowHeight}>
-    <ParallaxLayer rate={1} offset={0} style="z-index: -2;">
-      <div
-        style="
-        background-image: linear-gradient(rgba(5, 11, 3, 0.9) 0%, rgba(5, 11, 3, 1) 100%), url(teamPhotos/sideProfileOfMagazines.png);
-        height: 100%;
-        background-size: 150%;
-        background-position: 60% 48%;;
-        background-repeat: no-repeat;
-        position: relative;
-        overflow: hidden; 
-        backface-visibility: hidden;
-        display: flex;
-align-items: center;
-justify-content: center;
-
-        "
-      />
+    <ParallaxLayer
+      rate={1}
+      offset={0}
+      style="z-index: -2; justify-content: flex-start;"
+    >
+      <div class="backgroundDiv" />
     </ParallaxLayer>
     <ParallaxLayer
       rate={1}
@@ -145,7 +134,7 @@ justify-content: center;
             <div
               style="text-overflow: clip;
               overflow: hidden; 
-              width:  {((pageX * 1.5) / windowWidth) * 30}rem; 
+              width:  {((pageX * 1.5) / windowWidth) * 25}rem; 
               grid-column: 1;
               grid-row: 1;
               height: 100%;
@@ -802,5 +791,28 @@ justify-content: center;
       flex: 100%;
       max-width: 100%;
     }
+  }
+  .backgroundDiv {
+    position: relative;
+    height: calc(100vh);
+    background-image: linear-gradient(
+      rgba(5, 11, 3, 0.8) 0%,
+      rgba(5, 11, 3, 1) 70%
+    );
+    overflow: hidden;
+    backface-visibility: hidden;
+  }
+
+  .backgroundDiv::before {
+    content: "";
+    position: absolute;
+    margin: 1px 1px 1px 1px;
+    width: 99%;
+    height: 99%;
+    background-image: url(teamPhotos/sideProfileOfMagazines.png);
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
   }
 </style>

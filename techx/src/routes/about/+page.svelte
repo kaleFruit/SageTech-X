@@ -18,22 +18,7 @@
 <div class="container">
   <Parallax sections={totalNumEditions + 1} sectionHeight={1 * windowHeight}>
     <ParallaxLayer rate={1} offset={0} style="z-index: -2;">
-      <div
-        style="
-        background-image: linear-gradient(rgba(5, 11, 3, 0.8) 0%, rgba(5, 11, 3, 1) 80%), url(teamPhotos/sideProfileOfMagazines.png);
-        height: 90%;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        position: relative;
-        overflow: hidden; 
-        backface-visibility: hidden;
-        display: flex;
-align-items: center;
-justify-content: center;
-
-        "
-      />
+      <div class="backgroundDiv" />
     </ParallaxLayer>
     <ParallaxLayer
       rate={1.5}
@@ -456,7 +441,7 @@ justify-content: center;
               >
                 <stop
                   offset="0%"
-                  style="stop-color:var(--primary-color);    stop-opacity:0.4"
+                  style="stop-color:var(--primary-color);    stop-opacity:0.2"
                 />
                 <stop
                   offset="100%"
@@ -475,7 +460,7 @@ justify-content: center;
               >
                 <stop
                   offset="0%"
-                  style="stop-color:var(--darker-accent);    stop-opacity:0.3"
+                  style="stop-color:var(--darker-accent);    stop-opacity:0.1"
                 />
                 <stop
                   offset="100%"
@@ -586,6 +571,40 @@ justify-content: center;
     justify-content: center;
     text-align: center;
     flex-direction: column;
-    padding: 0 8rem 0 8rem;
+  }
+
+  @media (max-width: 600px) {
+    .edition {
+      padding: 0 2rem 0 2rem;
+    }
+  }
+  @media (min-width: 600px) {
+    .edition {
+      padding: 0 8rem 0 8rem;
+    }
+  }
+
+  .backgroundDiv {
+    position: relative;
+    height: calc(100vh);
+    background-image: linear-gradient(
+      rgba(5, 11, 3, 0.8) 0%,
+      rgba(5, 11, 3, 1) 70%
+    );
+    overflow: hidden;
+    backface-visibility: hidden;
+  }
+
+  .backgroundDiv::before {
+    content: "";
+    position: absolute;
+    margin: 1px 1px 1px 1px;
+    width: 99%;
+    height: 99%;
+    background-image: url(teamPhotos/sideProfileOfMagazines.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
   }
 </style>

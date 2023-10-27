@@ -18,7 +18,7 @@
 
   <ParallaxLayer rate={0.5} offset={1}>
     <div style="display: flex; justify-content: center;">
-      <img class="photo" src="3.1/cover.jpg" alt="cover" />
+      <img class="photo" src="3.1/cover.jpg" alt="cover" style="z-index: 1;" />
     </div>
   </ParallaxLayer>
   {#each { length: 6 } as _, j}
