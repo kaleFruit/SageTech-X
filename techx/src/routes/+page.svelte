@@ -179,10 +179,10 @@
             Started in 2021, Minki Shin (class of 2022) created the Tech-X
             Magazine with the intention to inspire an open and passionate STEM
             community. The magazine gives students the opportunity to share
-            their interests and learn from others. The magazine helps students
-            develop their scientific communication. Learning how to distill
-            complex ideas into more digestable language is an important, yet
-            under-practiced, skill among many young STEM students.
+            their interests and learn from others. Learning how to distill
+            complex ideas into more digestable language is an important skill,
+            yet it's also an under-practiced skill among many young STEM
+            students.
           </p>
           <p>
             If you're interested in contributing to the magazine, please contact
@@ -220,7 +220,7 @@
         Mr. Parker, our club advisor!
       </p>
       <Team />
-      <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 4rem;">
         <div class="column">
           <img src="teamPhotos/teamPhoto.jpg" alt="photoOfTeam" />
         </div>
