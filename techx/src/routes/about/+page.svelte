@@ -17,18 +17,41 @@
 
 <div class="container">
   <Parallax sections={totalNumEditions + 1} sectionHeight={1 * windowHeight}>
+    <ParallaxLayer rate={1} offset={0} style="z-index: -2;">
+      <div
+        style="
+        background-image: linear-gradient(rgba(5, 11, 3, 0.8) 0%, rgba(5, 11, 3, 1) 80%), url(teamPhotos/sideProfileOfMagazines.png);
+        height: 90%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        overflow: hidden; 
+        backface-visibility: hidden;
+        display: flex;
+align-items: center;
+justify-content: center;
+
+        "
+      />
+    </ParallaxLayer>
     <ParallaxLayer
-      rate={1}
+      rate={1.5}
       offset={0}
       style="
-              display: flex; 
-              justify-content: center;
-              align-content: center; 
-              flex-direction: column;
-              z-index: 0;
-          "
+    display: flex; 
+    justify-content: center;
+    flex-direction: column;
+    "
     >
-      <h1 style="text-align: center;">Archives</h1>
+      <h1
+        style="
+        text-align: center;
+        padding-bottom: 10rem;
+        "
+      >
+        Archives
+      </h1>
     </ParallaxLayer>
     <ParallaxLayer rate={0.5} offset={totalNumEditions - 6}>
       <div class="edition">
@@ -87,7 +110,7 @@
               >
                 <stop
                   offset="0%"
-                  style="stop-color:var(--primary-color);    stop-opacity:0.4"
+                  style="stop-color:var(--primary-color);    stop-opacity:0.1"
                 />
                 <stop
                   offset="100%"
@@ -106,7 +129,7 @@
               >
                 <stop
                   offset="0%"
-                  style="stop-color:var(--darker-accent);    stop-opacity:0.3"
+                  style="stop-color:var(--darker-accent);    stop-opacity:0.1"
                 />
                 <stop
                   offset="100%"

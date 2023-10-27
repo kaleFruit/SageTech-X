@@ -31,7 +31,7 @@
       pos: [275, 100],
       color: [styles.primaryColor, styles.primaryAccent],
       rate: 0.5,
-      z: 0,
+      z: -1,
     },
     {
       id: 3,
@@ -66,7 +66,25 @@
 />
 
 <div class="container">
-  <Parallax sections={3.5} sectionHeight={0.8 * windowHeight}>
+  <Parallax sections={4.5} sectionHeight={0.8 * windowHeight}>
+    <ParallaxLayer rate={1} offset={0} style="z-index: -2;">
+      <div
+        style="
+        background-image: linear-gradient(rgba(5, 11, 3, 0.9) 0%, rgba(5, 11, 3, 1) 100%), url(teamPhotos/sideProfileOfMagazines.png);
+        height: 100%;
+        background-size: 150%;
+        background-position: 60% 48%;;
+        background-repeat: no-repeat;
+        position: relative;
+        overflow: hidden; 
+        backface-visibility: hidden;
+        display: flex;
+align-items: center;
+justify-content: center;
+
+        "
+      />
+    </ParallaxLayer>
     <ParallaxLayer
       rate={1}
       offset={0}
@@ -213,8 +231,17 @@
         Mr. Parker, our club advisor!
       </p>
       <Team />
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+        <div class="column">
+          <img src="teamPhotos/teamPhoto.jpg" alt="photoOfTeam" />
+        </div>
+        <div class="column">
+          <img src="teamPhotos/magazineOnTable.jpg" alt="photoOfTeam" />
+        </div>
+      </div>
     </ParallaxLayer>
-    <MediaQuery query="(min-width: 600px)" let:matches>
+
+    <MediaQuery query="(min-width: 1150px)" let:matches>
       {#if matches}
         <div class="default">
           {#each paths as pathInfo}
@@ -261,6 +288,244 @@
                   filter="url(#grain)"
                   d={pathInfo.form}
                   transform="scale(3 4) translate({pathInfo.pos[0]} {pathInfo
+                    .pos[1]})"
+                />
+                <linearGradient id="gradient{pathInfo.id}">
+                  <stop stop-color={pathInfo.color[0]} offset="30%" />
+                  <stop stop-color={pathInfo.color[1]} offset="100%" />
+                </linearGradient>
+              </svg>
+            </ParallaxLayer>
+          {/each}
+
+          <ParallaxLayer offset={0}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="904"
+              height="2000"
+              viewBox="0 0 904 2000"
+              preserveAspectRatio="none"
+            >
+              <radialGradient
+                id="G2"
+                cx="50%"
+                cy="50%"
+                r="50%"
+                fx="50%"
+                fy="50%"
+              >
+                <stop
+                  offset="0%"
+                  style="stop-color:var(--beige);    stop-opacity:0.1"
+                />
+                <stop
+                  offset="100%"
+                  style="stop-color:var(--beige); stop-opacity:0"
+                />
+              </radialGradient>
+              <ellipse cx="150" cy="650" rx="300" ry="400" fill="url(#G2)" />
+
+              <radialGradient
+                id="G3"
+                cx="50%"
+                cy="50%"
+                r="50%"
+                fx="50%"
+                fy="50%"
+              >
+                <stop
+                  offset="0%"
+                  style="stop-color:var(--primary-accent);    stop-opacity:0.2"
+                />
+                <stop
+                  offset="100%"
+                  style="stop-color:var(--darker-accent); stop-opacity:0"
+                />
+              </radialGradient>
+              <ellipse cx="850" cy="100" rx="300" ry="250" fill="url(#G3)" />
+            </svg>
+          </ParallaxLayer>
+          <ParallaxLayer
+            rate={1}
+            offset={1}
+            style="
+            justify-content: flex-start;
+            margin-top: 15rem;
+            align-items: left;
+            font-size: 2rem;
+            z-index: 2;
+            position: absolute;
+          "
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="904"
+              height="2000"
+              viewBox="0 0 904 2000"
+              preserveAspectRatio="none"
+              style="position: absolute; z-index: -3;"
+            >
+              <radialGradient
+                id="G4"
+                cx="50%"
+                cy="50%"
+                r="50%"
+                fx="50%"
+                fy="50%"
+              >
+                <stop
+                  offset="0%"
+                  style="stop-color:var(--primary-color);    stop-opacity:0.5"
+                />
+                <stop
+                  offset="100%"
+                  style="stop-color:var(--primary-accent); stop-opacity:0"
+                />
+              </radialGradient>
+              <ellipse cx="0" cy="750" rx="500" ry="500" fill="url(#G4)" />
+
+              <radialGradient
+                id="G9"
+                cx="50%"
+                cy="50%"
+                r="50%"
+                fx="50%"
+                fy="50%"
+              >
+                <stop
+                  offset="0%"
+                  style="stop-color:var(--darker-accent);    stop-opacity:0.2"
+                />
+                <stop
+                  offset="100%"
+                  style="stop-color:var(--lime); stop-opacity:0"
+                />
+              </radialGradient>
+              <ellipse cx="850" cy="400" rx="300" ry="400" fill="url(#G9)" />
+            </svg>
+          </ParallaxLayer>
+          <ParallaxLayer
+            rate={1.5}
+            offset={1}
+            style="
+            margin-top: 15rem;
+            align-items: right;
+            font-size: 2rem;
+            z-index: 3;
+            position: absolute;
+            padding-right: 4rem; 
+            padding-top: 17rem;
+          "
+          >
+            <div
+              style="float: right; display: grid; justify-items: center;            
+              flex-direction: column;"
+            >
+              <img
+                src="teamPhotos/photoofmagazines.jpg"
+                alt="logo"
+                style="width: 30rem; border-radius: 2rem;"
+              />
+            </div>
+          </ParallaxLayer>
+          <ParallaxLayer offset={2} rate={2}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="904"
+              height="2000"
+              viewBox="0 0 904 2000"
+              preserveAspectRatio="none"
+            >
+              <radialGradient
+                id="G5"
+                cx="50%"
+                cy="50%"
+                r="50%"
+                fx="50%"
+                fy="50%"
+              >
+                <stop
+                  offset="0%"
+                  style="stop-color:var(--primary-color);    stop-opacity:0.3"
+                />
+                <stop
+                  offset="100%"
+                  style="stop-color:var(--beige); stop-opacity:0"
+                />
+              </radialGradient>
+              <ellipse cx="100" cy="550" rx="350" ry="350" fill="url(#G5)" />
+
+              <radialGradient
+                id="G8"
+                cx="50%"
+                cy="50%"
+                r="50%"
+                fx="50%"
+                fy="50%"
+              >
+                <stop
+                  offset="0%"
+                  style="stop-color:var(--darker-accent);    stop-opacity:0.3"
+                />
+                <stop
+                  offset="100%"
+                  style="stop-color:var(--lime); stop-opacity:0"
+                />
+              </radialGradient>
+              <ellipse cx="850" cy="400" rx="300" ry="400" fill="url(#G8)" />
+            </svg>
+          </ParallaxLayer>
+        </div>
+      {/if}
+    </MediaQuery>
+
+    <MediaQuery query="(min-width: 600px) and (max-width: 1150px)" let:matches>
+      {#if matches}
+        <div class="default">
+          {#each paths as pathInfo}
+            <ParallaxLayer
+              rate={pathInfo.rate}
+              offset={0}
+              style="
+              justify-content: flex-start; 
+              z-index: {pathInfo.z};
+              "
+            >
+              <svg
+                class="gr1"
+                xmlns="http://www.w3.org/2000/svg"
+                width="904"
+                height="2000"
+                viewBox="0 0 904 2000"
+                fill="url(#gradient{pathInfo.id})"
+                preserveAspectRatio="none"
+              >
+                <filter id="grain">
+                  <feTurbulence
+                    type="fractalNoise"
+                    baseFrequency="6"
+                    stitchTiles="stitch"
+                  />
+                  <feColorMatrix
+                    in="colorNoise"
+                    type="matrix"
+                    values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"
+                  />
+                  <feComposite
+                    operator="in"
+                    in2="SourceGraphic"
+                    result="monoNoise"
+                  />
+                  <feBlend
+                    in="SourceGraphic"
+                    in2="monoNoise"
+                    mode="hard-light"
+                  />
+                </filter>
+                <path
+                  filter="url(#grain)"
+                  d={pathInfo.form}
+                  transform="scale(3 3) translate({pathInfo.pos[0]} {pathInfo
                     .pos[1]})"
                 />
                 <linearGradient id="gradient{pathInfo.id}">
@@ -377,31 +642,6 @@
               <ellipse cx="850" cy="400" rx="300" ry="400" fill="url(#G9)" />
             </svg>
           </ParallaxLayer>
-          <ParallaxLayer
-            rate={1.5}
-            offset={1}
-            style="
-            margin-top: 15rem;
-            align-items: right;
-            font-size: 2rem;
-            z-index: 3;
-            position: absolute;
-            padding-right: 8rem; 
-            padding-top: 17rem;
-          "
-          >
-            <div
-              style="float: right; display: grid; justify-items: center;
-              justify-content: center;             
-              flex-direction: column;"
-            >
-              <img
-                src="photoofmagazines.jpg"
-                alt="logo"
-                style="width: 30rem; border-radius: 2rem;"
-              />
-            </div>
-          </ParallaxLayer>
           <ParallaxLayer offset={2} rate={2}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -452,43 +692,13 @@
         </div>
       {/if}
     </MediaQuery>
+
     <MediaQuery query="(max-width: 600px)" let:matches>
       {#if matches}
         <ParallaxLayer offset={0}>
           <p style="text-align: center; font-style: italic; color:chartreuse">
             For the best viewing experience, please move to desktop
           </p>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="904"
-            height="2000"
-            viewBox="0 0 904 2000"
-            preserveAspectRatio="none"
-          >
-            <radialGradient id="G2" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-              <stop
-                offset="0%"
-                style="stop-color:var(--beige);    stop-opacity:0.3"
-              />
-              <stop
-                offset="100%"
-                style="stop-color:var(--beige); stop-opacity:0"
-              />
-            </radialGradient>
-            <ellipse cx="150" cy="500" rx="300" ry="300" fill="url(#G2)" />
-
-            <radialGradient id="G3" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-              <stop
-                offset="0%"
-                style="stop-color:var(--primary-accent);    stop-opacity:0.5"
-              />
-              <stop
-                offset="100%"
-                style="stop-color:var(--darker-accent); stop-opacity:0"
-              />
-            </radialGradient>
-            <ellipse cx="850" cy="100" rx="300" ry="250" fill="url(#G3)" />
-          </svg>
         </ParallaxLayer>
         <ParallaxLayer
           rate={1}
@@ -576,5 +786,21 @@
   }
   svg {
     width: 100%;
+  }
+  .column {
+    flex: 1;
+    max-width: 50%;
+  }
+
+  .column img {
+    vertical-align: middle;
+    width: 100%;
+    border-radius: 1rem;
+  }
+  @media (max-width: 800px) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+    }
   }
 </style>

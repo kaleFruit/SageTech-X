@@ -102,7 +102,7 @@
     font-family: Lato;
     text-align: center;
     font-size: 3rem;
-    text-decoration: none;
+    text-decoration: underline;
   }
   ul {
     color: antiquewhite;
