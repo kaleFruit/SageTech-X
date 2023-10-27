@@ -601,7 +601,7 @@
     margin: 1px 1px 1px 1px;
     width: 99%;
     height: 99%;
-    background-image: url("teamPhotos/sideProfileOfMagazines.png");
+    background-image: url("/teamPhotos/sideProfileOfMagazines.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
