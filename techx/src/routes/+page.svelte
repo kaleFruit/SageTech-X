@@ -794,7 +794,7 @@
   }
   .backgroundDiv {
     position: relative;
-    height: calc(100vh);
+    height: 100%;
     background-image: linear-gradient(
       rgba(5, 11, 3, 0.8) 0%,
       rgba(5, 11, 3, 1) 70%
