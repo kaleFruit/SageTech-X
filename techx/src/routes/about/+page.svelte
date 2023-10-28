@@ -167,47 +167,6 @@
             </linearGradient>
           </svg>
         </ParallaxLayer>
-        <ParallaxLayer offset={1} rate={1} style="z-index: -1;">
-          <svg
-            class="gr1"
-            xmlns="http://www.w3.org/2000/svg"
-            width="100%"
-            height="2000"
-            viewBox="0 0 904 2000"
-            fill="url(#gradient2)"
-            preserveAspectRatio="none"
-          >
-            <filter id="grain">
-              <feTurbulence
-                type="fractalNoise"
-                baseFrequency="6"
-                stitchTiles="stitch"
-              />
-              <feColorMatrix
-                in="colorNoise"
-                type="matrix"
-                values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"
-              />
-              <feComposite
-                operator="in"
-                in2="SourceGraphic"
-                result="monoNoise"
-              />
-              <feBlend in="SourceGraphic" in2="monoNoise" mode="hard-light" />
-            </filter>
-
-            <path
-              filter="url(#grain)"
-              d="M44.3,-28.5C57.8,-18.4,69.4,0,65.3,13.6C61.1,27.1,41.2,35.8,22.7,43.3C4.1,50.8,-13.2,57.1,-27.8,52.2C-42.3,47.3,-54.1,31.2,-54.1,16.6C-54.1,1.9,-42.3,-11.2,-31.3,-20.7C-20.3,-30.1,-10.2,-35.9,2.6,-38C15.4,-40.1,30.8,-38.5,44.3,-28.5Z"
-              transform="scale(4 5) translate(0 70) rotate(180)"
-            />
-
-            <linearGradient id="gradient2">
-              <stop stop-color="rgba(101,55,252)" offset="30%" />
-              <stop stop-color="rgba(252,101,11)" offset="100%" />
-            </linearGradient>
-          </svg>
-        </ParallaxLayer>
 
         <ParallaxLayer offset={2} rate={1.8} style="z-index: -1;">
           <svg
@@ -331,89 +290,6 @@
             <linearGradient id="gradient2">
               <stop stop-color="var(--primary-color)" offset="30%" />
               <stop stop-color="var(--primary-accent)" offset="100%" />
-            </linearGradient>
-          </svg>
-        </ParallaxLayer>
-
-        <ParallaxLayer offset={5.3} rate={1} style="z-index: -1;">
-          <svg
-            class="gr1"
-            xmlns="http://www.w3.org/2000/svg"
-            width="100%"
-            height="2000"
-            viewBox="0 0 904 2000"
-            fill="url(#gradient2)"
-            preserveAspectRatio="none"
-          >
-            <filter id="grain">
-              <feTurbulence
-                type="fractalNoise"
-                baseFrequency="6"
-                stitchTiles="stitch"
-              />
-              <feColorMatrix
-                in="colorNoise"
-                type="matrix"
-                values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"
-              />
-              <feComposite
-                operator="in"
-                in2="SourceGraphic"
-                result="monoNoise"
-              />
-              <feBlend in="SourceGraphic" in2="monoNoise" mode="hard-light" />
-            </filter>
-
-            <path
-              filter="url(#grain)"
-              d="M36.8,-47.8C48.3,-34.3,58.3,-23.2,65.8,-7.6C73.3,7.9,78.2,28,70.2,39.4C62.2,50.8,41.4,53.6,23.3,57.2C5.2,60.7,-10,65.1,-24.6,62.2C-39.3,59.3,-53.2,49,-65.2,34.6C-77.2,20.2,-87.1,1.5,-85.5,-16.4C-83.9,-34.3,-70.7,-51.4,-54.5,-64C-38.3,-76.6,-19.2,-84.7,-3.2,-80.8C12.7,-77,25.4,-61.2,36.8,-47.8Z"
-              transform="scale(3 3) translate(270 200) rotate(0)"
-            />
-
-            <linearGradient id="gradient2">
-              <stop stop-color="var(--primary-color)" offset="30%" />
-              <stop stop-color="var(--primary-accent)" offset="100%" />
-            </linearGradient>
-          </svg>
-        </ParallaxLayer>
-        <ParallaxLayer offset={6} rate={1.3} style="z-index: -1;">
-          <svg
-            class="gr1"
-            xmlns="http://www.w3.org/2000/svg"
-            width="100%"
-            height="2000"
-            viewBox="0 0 904 2000"
-            fill="url(#gradient2)"
-            preserveAspectRatio="none"
-          >
-            <filter id="grain">
-              <feTurbulence
-                type="fractalNoise"
-                baseFrequency="6"
-                stitchTiles="stitch"
-              />
-              <feColorMatrix
-                in="colorNoise"
-                type="matrix"
-                values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"
-              />
-              <feComposite
-                operator="in"
-                in2="SourceGraphic"
-                result="monoNoise"
-              />
-              <feBlend in="SourceGraphic" in2="monoNoise" mode="hard-light" />
-            </filter>
-
-            <path
-              filter="url(#grain)"
-              d="M28.1,-32.6C37.6,-25.5,47.3,-17.8,50.7,-7.6C54,2.5,51,15.1,44.6,25.4C38.2,35.6,28.5,43.5,17.3,47.6C6.1,51.8,-6.6,52.2,-21.5,50.5C-36.5,48.8,-53.9,45,-62.3,34.2C-70.8,23.3,-70.3,5.5,-67.6,-12.3C-64.8,-30,-59.9,-47.8,-48.3,-54.5C-36.6,-61.1,-18.3,-56.8,-4.5,-51.4C9.3,-46,18.6,-39.7,28.1,-32.6Z"
-              transform="scale(3 4) translate(50 200) rotate(0)"
-            />
-
-            <linearGradient id="gradient2">
-              <stop stop-color="var(--primary-accent)" offset="30%" />
-              <stop stop-color="var(--lime)" offset="100%" />
             </linearGradient>
           </svg>
         </ParallaxLayer>
