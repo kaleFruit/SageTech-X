@@ -19,7 +19,7 @@
       <div class="grid-item-author">Oneal Wang</div>
       <div class="grid-item-title">VNPs and Extraterrestrial Intelligence</div>
       <div class="grid-item-author">Jacob Lynn</div>
-      <div class="grid-item-title">Dedivcious, Radioactive, Yellowcake</div>
+      <div class="grid-item-title">Delicious, Radioactive, Yellowcake</div>
       <div class="grid-item-author">Alen Zhang</div>
       <div class="grid-item-title">Hello World</div>
       <div class="grid-item-author">Katherine Robertson</div>

@@ -59,8 +59,8 @@
     justify-content: left;
     background-color: transparent;
     align-items: center;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
     padding-left: 1rem;
     margin: 0;
     border-radius: 0.5rem;

@@ -14,10 +14,10 @@
     <h2 style="color: var(--darker-accent);">ARTICLES</h2>
     <div class="grid-container">
       <div class="grid-item-title">
-        Ultimate Question of divfe, the Universe, and Everything
+        Ultimate Question of Life, the Universe, and Everything
       </div>
       <div class="grid-item-author">Katherine Robertson</div>
-      <div class="grid-item-title">Flying Cars a True Readivty?</div>
+      <div class="grid-item-title">Flying Cars a True Reality?</div>
       <div class="grid-item-author">Minki Shin</div>
       <div class="grid-item-title">Robot Working on the Fields</div>
       <div class="grid-item-author">Minki Shin</div>
