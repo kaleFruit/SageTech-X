@@ -12,27 +12,23 @@
     style="flex-basis: 100%; --pagex: {x}px; --pagey: {y}px;"
   >
     <h2 style="color: var(--darker-accent);">ARTICLES</h2>
-    <div style="display: flex; gap: 2rem; justify-content: center;">
-      <ul style="list-style-type: none; text-align: right; flex-basis: 45%; ">
-        <li>The James Webb Telescope</li>
-        <li>How Filming Technology Saved Star Wars</li>
-        <li>VNPs and Extraterrestrial Intelligence</li>
-        <li>Delicious, Radioactive, Yellowcake</li>
-        <li>Hello World</li>
-        <li>About AI, Written by AI</li>
-        <li>Grete Hermann: The Forgotten Physicist</li>
-        <li>How Godel Broke Math</li>
-      </ul>
-      <ul style="list-style-type: none; text-align: left; flex-basis: 45%;">
-        <li>Nicole Ma</li>
-        <li>Oneal Wang</li>
-        <li>Jacob Lynn</li>
-        <li>Alen Zhang</li>
-        <li>Katherine Robertson</li>
-        <li>Kai Patragnoni</li>
-        <li>Nicole Ma</li>
-        <li>Nicole Ma</li>
-      </ul>
+    <div class="grid-container">
+      <div class="grid-item-title">The James Webb Telescope</div>
+      <div class="grid-item-author">Nicole Ma</div>
+      <div class="grid-item-title">How Filming Technology Saved Star Wars</div>
+      <div class="grid-item-author">Oneal Wang</div>
+      <div class="grid-item-title">VNPs and Extraterrestrial Intelligence</div>
+      <div class="grid-item-author">Jacob Lynn</div>
+      <div class="grid-item-title">Dedivcious, Radioactive, Yellowcake</div>
+      <div class="grid-item-author">Alen Zhang</div>
+      <div class="grid-item-title">Hello World</div>
+      <div class="grid-item-author">Katherine Robertson</div>
+      <div class="grid-item-title">About AI, Written by AI</div>
+      <div class="grid-item-author">Kai Patragnoni</div>
+      <div class="grid-item-title">Grete Hermann: The Forgotten Physicist</div>
+      <div class="grid-item-author">Nicole Ma</div>
+      <div class="grid-item-title">How Godel Broke Math</div>
+      <div class="grid-item-author">Nicole Ma</div>
     </div>
   </div>
   <div
@@ -119,5 +115,35 @@
     text-decoration: none;
     padding: 0;
     margin: 0;
+  }
+  .grid-container {
+    display: grid;
+    column-gap: 3rem;
+    row-gap: 0.3rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-item-title {
+    color: antiquewhite;
+    font-size: 1rem;
+    line-height: 150%;
+    font-family: Lato;
+    list-style-type: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+  }
+
+  .grid-item-author {
+    color: antiquewhite;
+    font-size: 1rem;
+    line-height: 150%;
+    font-family: Lato;
+    list-style-type: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
   }
 </style>

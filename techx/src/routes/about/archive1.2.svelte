@@ -12,25 +12,29 @@
     style="flex-basis: 100%; --pagex: {x}px; --pagey: {y}px;"
   >
     <h2 style="color: var(--darker-accent);">ARTICLES</h2>
-    <div style="display: flex; gap: 2rem; justify-content: center;">
-      <ul style="list-style-type: none; text-align: right; flex-basis: 45%; ">
-        <li>The Possibility of a Real-Life Star Wars Gun</li>
-        <li>Tesla Refresh</li>
-        <li>Searching for Exoplanets with Artificial Intelligence</li>
-        <li>Importance of 3D Printing in the Real World</li>
-        <li>Are Video Games Drugs?</li>
-        <li>Making a Beat with Keyon Sabahi: Drums</li>
-        <li>Whole Lotta Red: A Tale of Modern Disillusionment</li>
-      </ul>
-      <ul style="list-style-type: none; text-align: left; flex-basis: 45%;">
-        <li>Katherine Robertson</li>
-        <li>Ridwan Simjee</li>
-        <li>Minki Shin</li>
-        <li>Peter Huang</li>
-        <li>Nico Luo</li>
-        <li>Keyon Sabahi</li>
-        <li>Nic Eimani</li>
-      </ul>
+    <div class="grid-container">
+      <div class="grid-item-title">
+        The Possibility of a Real-Life Star Wars Gun
+      </div>
+      <div class="grid-item-author">Katherine Robertson</div>
+      <div class="grid-item-title">Tesla Refresh</div>
+      <div class="grid-item-author">Ridwan Simjee</div>
+      <div class="grid-item-title">
+        Searching for Exoplanets with Artificial Intelligence
+      </div>
+      <div class="grid-item-author">Minki Shin</div>
+      <div class="grid-item-title">
+        Importance of 3D Printing in the Real World
+      </div>
+      <div class="grid-item-author">Peter Huang</div>
+      <div class="grid-item-title">Are Video Games Drugs?</div>
+      <div class="grid-item-author">Nico Luo</div>
+      <div class="grid-item-title">king a Beat with Keyon Sabahi: Drums</div>
+      <div class="grid-item-author">Keyon Sabahi</div>
+      <div class="grid-item-title">
+        Whole Lotta Red: A Tale of Modern Disillusionment
+      </div>
+      <div class="grid-item-author">Nic Eimani</div>
     </div>
   </div>
   <div
@@ -113,5 +117,35 @@
     text-decoration: none;
     padding: 0;
     margin: 0;
+  }
+  .grid-container {
+    display: grid;
+    column-gap: 3rem;
+    row-gap: 0.3rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-item-title {
+    color: antiquewhite;
+    font-size: 1rem;
+    line-height: 150%;
+    font-family: Lato;
+    list-style-type: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+  }
+
+  .grid-item-author {
+    color: antiquewhite;
+    font-size: 1rem;
+    line-height: 150%;
+    font-family: Lato;
+    list-style-type: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
   }
 </style>

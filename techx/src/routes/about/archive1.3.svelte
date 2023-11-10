@@ -12,25 +12,27 @@
     style="flex-basis: 100%; --pagex: {x}px; --pagey: {y}px;"
   >
     <h2 style="color: var(--darker-accent);">ARTICLES</h2>
-    <div style="display: flex; gap: 2rem; justify-content: center;">
-      <ul style="list-style-type: none; text-align: right; flex-basis: 45%; ">
-        <li>Robots Change Food Industry</li>
-        <li>Real-Life Warp Drive?</li>
-        <li>Probability of an AI Doctor in the Future</li>
-        <li>USPS - Electrified</li>
-        <li>What is OCD? Destigmatizing Mental Health</li>
-        <li>The Astounding Intracies of Slapshot: Rebound</li>
-        <li>Sony WH-100MX4 Headphone Review</li>
-      </ul>
-      <ul style="list-style-type: none; text-align: left; flex-basis: 45%;">
-        <li>Nic Eimani</li>
-        <li>Katherine Robertson</li>
-        <li>Minki Shin</li>
-        <li>Ridwan Simjee</li>
-        <li>Nic Eimani</li>
-        <li>Peter Huang</li>
-        <li>Minki Shin</li>
-      </ul>
+    <div class="grid-container">
+      <div class="grid-item-title">Robots Change Food Industry</div>
+      <div class="grid-item-author">Nic Eimani</div>
+      <div class="grid-item-title">Real-Life Warp Drive?</div>
+      <div class="grid-item-author">Katherine Robertson</div>
+      <div class="grid-item-title">
+        Probability of an AI Doctor in the Future
+      </div>
+      <div class="grid-item-author">Minki Shin</div>
+      <div class="grid-item-title">USPS - Electrified</div>
+      <div class="grid-item-author">Ridwan Simjee</div>
+      <div class="grid-item-title">
+        What is OCD? Destigmatizing Mental Health
+      </div>
+      <div class="grid-item-author">Nic Eimani</div>
+      <div class="grid-item-title">
+        The Astounding Intracies of Slapshot: Rebound
+      </div>
+      <div class="grid-item-author">Peter Huang</div>
+      <div class="grid-item-title">Sony WH-100MX4 Headphone Review</div>
+      <div class="grid-item-author">Minki Shin</div>
     </div>
   </div>
   <div
@@ -115,5 +117,35 @@
     text-decoration: none;
     padding: 0;
     margin: 0;
+  }
+  .grid-container {
+    display: grid;
+    column-gap: 3rem;
+    row-gap: 0.3rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-item-title {
+    color: antiquewhite;
+    font-size: 1rem;
+    line-height: 150%;
+    font-family: Lato;
+    list-style-type: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+  }
+
+  .grid-item-author {
+    color: antiquewhite;
+    font-size: 1rem;
+    line-height: 150%;
+    font-family: Lato;
+    list-style-type: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
   }
 </style>

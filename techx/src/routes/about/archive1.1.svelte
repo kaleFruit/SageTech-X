@@ -12,21 +12,19 @@
     style="flex-basis: 100%; --pagex: {x}px; --pagey: {y}px;"
   >
     <h2 style="color: var(--darker-accent);">ARTICLES</h2>
-    <div style="display: flex; gap: 2rem; justify-content: center;">
-      <ul style="list-style-type: none; text-align: right; flex-basis: 45%; ">
-        <li>Future of Self-Driving Cars</li>
-        <li>The Future of Job Automation</li>
-        <li>By How Much Will A.I. Models Benefit in Fighting Covid-19</li>
-        <li>Creation of Music</li>
-        <li>Acid Rap Album Review</li>
-      </ul>
-      <ul style="list-style-type: none; text-align: left; flex-basis: 45%;">
-        <li>Minki Shin</li>
-        <li>Minki Shin</li>
-        <li>Minki Shin</li>
-        <li>Peter Huang</li>
-        <li>Ridwan Simjee</li>
-      </ul>
+    <div class="grid-container">
+      <div class="grid-item-title">Future of Self-Driving Cars</div>
+      <div class="grid-item-author">Minki Shin</div>
+      <div class="grid-item-title">The Future of Job Automation</div>
+      <div class="grid-item-author">Minki Shin</div>
+      <div class="grid-item-title">
+        By How Much Will A.I. Models Benefit in Fighting Covid-19
+      </div>
+      <div class="grid-item-author">Minki Shin</div>
+      <div class="grid-item-title">Creation of Music</div>
+      <div class="grid-item-author">Peter Huang</div>
+      <div class="grid-item-title">Acid Rap Album Review</div>
+      <div class="grid-item-author">Ridwan Simjee</div>
     </div>
   </div>
   <div
@@ -111,5 +109,35 @@
     text-decoration: none;
     padding: 0;
     margin: 0;
+  }
+  .grid-container {
+    display: grid;
+    column-gap: 3rem;
+    row-gap: 0.3rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-item-title {
+    color: antiquewhite;
+    font-size: 1rem;
+    line-height: 150%;
+    font-family: Lato;
+    list-style-type: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+  }
+
+  .grid-item-author {
+    color: antiquewhite;
+    font-size: 1rem;
+    line-height: 150%;
+    font-family: Lato;
+    list-style-type: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
   }
 </style>

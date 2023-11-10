@@ -12,32 +12,27 @@
     style="flex-basis: 100%; --pagex: {x}px; --pagey: {y}px;"
   >
     <h2 style="color: var(--darker-accent);">ARTICLES</h2>
-    <div style="display: flex; gap: 2rem; justify-content: center;">
-      <ul style="list-style-type: none; text-align: right; flex-basis: 45%; ">
-        <li>The Tau Manifesto</li>
-        <li>Pi Day</li>
-        <li>Convex Hull and Its Applications</li>
-        <li>Printing with a Purpose</li>
-        <li>
-          The Convergence of Computer Vision, Computation, and Autonomous
-          Vehicles
-        </li>
-        <li>Nature's Murder Mystery</li>
-        <li>Breaking the Barrier</li>
-        <li>Snap! Crackle! Pop!</li>
-        <li>Solid State Batteries</li>
-      </ul>
-      <ul style="list-style-type: none; text-align: left; flex-basis: 45%;">
-        <li>Nicole Ma</li>
-        <li>Katherine Robertson</li>
-        <li>Melody Yu</li>
-        <li>Basim Cheema-Sabir</li>
-        <li>Kevin Peng</li>
-        <li>Julia Wen</li>
-        <li>Derek Zuo</li>
-        <li>Oneal Wang</li>
-        <li>Kevin Hu</li>
-      </ul>
+    <div class="grid-container">
+      <div class="grid-item-title">The Tau Manifesto</div>
+      <div class="grid-item-author">Nicole Ma</div>
+      <div class="grid-item-title">Pi Day</div>
+      <div class="grid-item-author">Katherine Robertson</div>
+      <div class="grid-item-title">Convex Hull and Its Applivcations</div>
+      <div class="grid-item-author">Melody Yu</div>
+      <div class="grid-item-title">Printing with a Purpose</div>
+      <div class="grid-item-author">Basim Cheema-Sabir</div>
+      <div class="grid-item-title">
+        The Convergence of Computer Vision, Computation, and Autonomous Vehicles
+      </div>
+      <div class="grid-item-author">Kevin Peng</div>
+      <div class="grid-item-title">Nature's Murder Mystery</div>
+      <div class="grid-item-author">Julia Wen</div>
+      <div class="grid-item-title">Breaking the Barrier</div>
+      <div class="grid-item-author">Derek Zuo</div>
+      <div class="grid-item-title">Snap! Crackle! Pop!</div>
+      <div class="grid-item-author">Oneal Wang</div>
+      <div class="grid-item-title">Solid State Batteries</div>
+      <div class="grid-item-author">Kevin Hu</div>
     </div>
   </div>
   <div
@@ -123,5 +118,35 @@
     text-decoration: none;
     padding: 0;
     margin: 0;
+  }
+  .grid-container {
+    display: grid;
+    column-gap: 3rem;
+    row-gap: 0.3rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-item-title {
+    color: antiquewhite;
+    font-size: 1rem;
+    line-height: 150%;
+    font-family: Lato;
+    list-style-type: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+  }
+
+  .grid-item-author {
+    color: antiquewhite;
+    font-size: 1rem;
+    line-height: 150%;
+    font-family: Lato;
+    list-style-type: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
   }
 </style>
