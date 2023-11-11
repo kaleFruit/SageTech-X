@@ -6,6 +6,7 @@
 <slot />
 
 <svelte:head>
+  <title>Sage Tech-X Magazine</title>
   <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Lato&family=Mulish"
