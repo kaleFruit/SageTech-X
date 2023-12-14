@@ -10,9 +10,6 @@
   import { onDestroy } from "svelte";
   import Footer from "./footer.svelte";
 
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.registerPlugin(TextPlugin);
-
   let windowHeight = 0;
   let windowWidth = 0;
   let photoIntroWidthHeight = 12;
@@ -68,6 +65,7 @@
   let ctx;
 
   onMount(() => {
+    gsap.registerPlugin(ScrollTrigger, TextPlugin);
     ctx = gsap.context(() => {
       var intro = gsap
         .timeline({
