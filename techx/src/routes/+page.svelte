@@ -266,14 +266,30 @@
     class="page pg1"
     style="height: calc(100vh - {$navbarHeight}px); border-radius: 0; z-index: 3;"
   >
-    <h3
-      class="pg1Text1"
-      style="position: absolute; top: 2rem; right: 2rem; width: calc(100%-4rem); max-width: 60vw;"
-    >
-      The Sage Tech-X Magazine hopes to inform and engage the Sage Hill students
-      and community about the state of STEM, its transformative effects on
-      society, and its limitless possibilities in the future.
-    </h3>
+    <MediaQuery query="(max-width: 800px)" let:matches>
+      {#if matches}
+        <h4
+          class="pg1Text1"
+          style="position: absolute; top: 2rem; right: 2rem; width: calc(100% - 4rem);"
+        >
+          The Sage Tech-X Magazine hopes to inform and engage the Sage Hill
+          students and community about the state of STEM, its transformative
+          effects on society, and its limitless possibilities in the future.
+        </h4>
+      {/if}
+    </MediaQuery>
+    <MediaQuery query="(min-width: 800px)" let:matches>
+      {#if matches}
+        <h3
+          class="pg1Text1"
+          style="position: absolute; top: 2rem; right: 2rem; width: calc(100% - 4rem);"
+        >
+          The Sage Tech-X Magazine hopes to inform and engage the Sage Hill
+          students and community about the state of STEM, its transformative
+          effects on society, and its limitless possibilities in the future.
+        </h3>
+      {/if}
+    </MediaQuery>
     <div
       class="slider"
       style="background-color: antiquewhite; height: calc(100vh); position: absolute; width: 100%;"
@@ -324,16 +340,16 @@
       <MediaQuery query="(max-width: 800px)" let:matches>
         {#if matches}
           <div
-            style="width: 100%; top: {$navbarHeight}px; bottom: 0; left: 0; height: calc(100vh - {$navbarHeight}px); display: flex; flex-direction: column; gap: 8rem; justify-content: center;"
+            style="margin: 0; width: 100%; top: {$navbarHeight}px; bottom: 0; left: 0; height: calc(100vh - {$navbarHeight}px); display: flex; flex-direction: column; gap: 2rem; justify-content: center;"
           >
             <div
               style="right: 0; background: linear-gradient(horizontal, antiquewhite, rgba(250, 235, 215, 0) 20%, rgba(250, 235, 215, 0) 50%, antiquewhite 80%); position: absolute; width: 100%; z-index: 5; height: 30rem; bottom: 0;"
             />
-            <div style="margin-left: 2rem;">
-              <h1 style="color: var(--black); margin-bottom: 4rem;">
+            <div style="margin-left: 2rem; margin-bottom: 0;">
+              <h1 style="color: var(--black); margin-bottom: 4rem; margin: 0;">
                 Our Story
               </h1>
-              <p style="color: var(--black); max-width: 35rem;">
+              <p style="color: var(--black); width: calc(100% - 4rem);">
                 Started in 2021, Minki Shin (class of 2022) created the Tech-X
                 Magazine with the intention to inspire an open and passionate
                 STEM community. The magazine gives students the opportunity to
@@ -342,13 +358,12 @@
                 important skill, yet it's also an under-practiced skill among
                 many young STEM students.
               </p>
-              <p style="color: var(--black); max-width: 35rem;">
+              <p style="color: var(--black); width: calc(100% - 4rem);">
                 If you're interested in contributing to the magazine, please
                 contact our current editor-in-chief:
                 24robertsonk@sagehillschool.org.
               </p>
             </div>
-
             <div class="carousel-container" style="margin-top: 1px;">
               <div class="carousel-inner" style="z-index: -1;">
                 {#each [...allImages, ...allImages] as image, index (index)}
@@ -391,7 +406,7 @@
 
     .carousel-item {
       flex: 0 0 auto;
-      width: 30rem;
+      width: 25rem;
       height: auto;
       object-fit: cover;
       border-radius: 1rem;
