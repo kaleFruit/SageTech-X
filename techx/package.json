@@ -22,7 +22,10 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@studio-freight/lenis": "^1.0.29",
 		"@svelteuidev/composables": "^0.15.3",
-		"esbuild": "^0.19.2"
+		"esbuild": "^0.19.2",
+		"gsap": "^3.12.3",
+		"lodash.throttle": "^4.1.1"
 	}
 }

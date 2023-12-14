@@ -118,13 +118,13 @@
 
 <style>
   .infoCard {
-    border: 0.1rem solid rgba(215, 218, 250, 0.343);
+    border: 1px solid rgba(215, 218, 250, 0.343);
     border-radius: 1rem;
     padding: 0.5rem;
     background-color: #1f1f1f;
   }
   .role {
-    border: 0.3rem solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     background: #1212127a;
     border-radius: 1rem;
     padding: 1rem;
@@ -146,7 +146,7 @@
   }
   .role h {
     color: var(--color, #ddd);
-    font-family: Lato;
+    font-family: "Inter";
     text-align: center;
     font-size: 1.3rem;
   }
@@ -161,13 +161,13 @@
   }
   .infoCard h2 {
     color: antiquewhite;
-    font-family: Lato;
+    font-family: "Inter";
     font-size: 1rem;
     text-align: center;
   }
   .infoCard p {
     color: antiquewhite;
-    font-family: Lato;
+    font-family: "Inter";
     font-size: 1rem;
     text-align: center;
   }

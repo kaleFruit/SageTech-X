@@ -66,7 +66,7 @@
     color: antiquewhite;
     padding: 2rem;
     text-align: center;
-    border: 0.3rem solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 1rem;
     background-color: #2e2e2e34;
     box-shadow: 0 0 0.2rem rgb(255, 255, 255, 0.4);
@@ -95,22 +95,28 @@
 
   h2 {
     color: antiquewhite;
-    font-family: Lato;
+    font-family: "Inter";
     text-align: center;
     font-size: 1.3rem;
   }
   a {
     color: antiquewhite;
-    font-family: Lato;
+    font-family: "Inter";
     text-align: center;
     font-size: 3rem;
     text-decoration: underline;
+    transform-origin: center;
+    transform: scale(1);
+    transition: transform 0.5s ease-in-out;
+  }
+  a:hover {
+    transform: scale(1.1);
   }
   ul {
     color: antiquewhite;
     font-size: 1rem;
     line-height: 150%;
-    font-family: Lato;
+    font-family: "Inter";
     list-style-type: none;
     text-decoration: none;
     padding: 0;
@@ -127,7 +133,7 @@
     color: antiquewhite;
     font-size: 1rem;
     line-height: 150%;
-    font-family: Lato;
+    font-family: "Inter";
     list-style-type: none;
     text-decoration: none;
     padding: 0;
@@ -139,7 +145,7 @@
     color: antiquewhite;
     font-size: 1rem;
     line-height: 150%;
-    font-family: Lato;
+    font-family: "Inter";
     list-style-type: none;
     text-decoration: none;
     padding: 0;

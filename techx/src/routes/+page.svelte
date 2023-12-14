@@ -1,12 +1,22 @@
 <script>
-  import { Parallax, ParallaxLayer } from "svelte-parallax";
-  import Page from "./about/+page.svelte";
   import MediaQuery from "../MediaQuery.svelte";
-
+  import gsap from "gsap";
+  import ScrollTrigger from "gsap/dist/ScrollTrigger";
+  import { onMount } from "svelte";
+  import Lenis from "@studio-freight/lenis";
+  import { navbarHeight } from "./store.js";
+  import TextPlugin from "gsap/dist/TextPlugin";
   import Team from "./team.svelte";
+  import { onDestroy } from "svelte";
+  import Footer from "./footer.svelte";
+
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(TextPlugin);
 
   let windowHeight = 0;
   let windowWidth = 0;
+  let photoIntroWidthHeight = 12;
+
   let styles = {
     primaryColor: "#9fc131",
     primaryAccent: "#005c53",
@@ -48,6 +58,168 @@
   $: if (scroll > 800) {
     svgShow = true;
   }
+  let lenis;
+
+  const allImages = [
+    "teamPhotos/teamPhoto.jpg",
+    "teamPhotos/magazineOnTable.jpg",
+    "teamPhotos/photoofmagazines.jpg",
+  ];
+  let ctx;
+
+  onMount(() => {
+    ctx = gsap.context(() => {
+      var intro = gsap
+        .timeline({
+          defaults: {
+            transformOrigin: `${photoIntroWidthHeight / 2}rem -10rem`,
+            ease: "power1.inOut",
+            duration: 2,
+          },
+          scrollTrigger: {
+            trigger: ".intro",
+            start: "top 1%",
+            end: "+=100%",
+            scrub: true,
+            pin: true,
+            anticipatePin: 1,
+          },
+        })
+        .fromTo(
+          ".rev1",
+          { autoAlpha: 0 },
+          {
+            rotation: -360,
+            autoAlpha: 1,
+          },
+          "<0.05"
+        )
+        .fromTo(
+          ".rev2",
+          { autoAlpha: 0 },
+          {
+            rotation: -320,
+            autoAlpha: 1,
+          },
+          "<0.05"
+        )
+        .fromTo(
+          ".rev3",
+          { autoAlpha: 0 },
+          {
+            rotation: -280,
+            autoAlpha: 1,
+          },
+          "<0.05"
+        )
+        .fromTo(
+          ".rev4",
+          { autoAlpha: 0 },
+          {
+            rotation: -240,
+            autoAlpha: 1,
+          },
+          "<0.05"
+        )
+        .fromTo(
+          ".rev5",
+          { autoAlpha: 0 },
+          {
+            rotation: -200,
+            autoAlpha: 1,
+          },
+          "<0.05"
+        )
+        .fromTo(
+          ".rev6",
+          { autoAlpha: 0 },
+          {
+            rotation: -160,
+            autoAlpha: 1,
+          },
+          "<0.05"
+        )
+        .fromTo(
+          ".rev7",
+          { autoAlpha: 0 },
+          {
+            rotation: -120,
+            autoAlpha: 1,
+          },
+          "<0.05"
+        )
+        .fromTo(
+          ".rev8",
+          { autoAlpha: 0 },
+          {
+            rotation: -80,
+            autoAlpha: 1,
+          },
+          "<0.05"
+        )
+        .fromTo(
+          ".rev9",
+          { autoAlpha: 0 },
+          {
+            rotation: -40,
+            autoAlpha: 1,
+          },
+          "<0.05"
+        );
+
+      var page1 = gsap
+        .timeline({
+          defaults: { duration: 3 },
+          scrollTrigger: {
+            trigger: ".pg1",
+            start: "top top",
+            end: "+=300%",
+            scrub: true,
+            pin: true,
+            anticipatePin: 1,
+          },
+        })
+        .from(".pg1Text1", { size: 0.95 })
+        .fromTo(
+          ".slider",
+          {
+            yPercent: 120,
+            scale: 1.1,
+          },
+          {
+            yPercent: 0,
+            opacity: 1,
+            scale: 1.2,
+          }
+        )
+        .from(".pg1Text2", { yPercent: 120 }, "<1");
+
+      var page3 = gsap
+        .timeline({
+          defaults: { duration: 5 },
+          scrollTrigger: {
+            trigger: ".page3text",
+            start: "top center",
+            scrub: true,
+          },
+        })
+        .from(".page3text", { size: 0.95, opacity: 0 });
+    });
+
+    if (typeof window !== "undefined") {
+      const lenis = new Lenis();
+      lenis.on("scroll", (e) => {});
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    }
+  });
+
+  onDestroy(() => {
+    ctx && ctx.revert();
+  });
 </script>
 
 <svelte:window
@@ -57,754 +229,226 @@
   on:mousemove={(e) => ({ pageX, pageY } = e)}
 />
 
-<div class="container">
-  <Parallax sections={4.5} sectionHeight={0.8 * windowHeight}>
-    <ParallaxLayer
-      rate={1}
-      offset={0}
-      style="z-index: -2; justify-content: flex-start;"
-    >
-      <div class="backgroundDiv" />
-    </ParallaxLayer>
-    <ParallaxLayer
-      rate={1}
-      offset={0}
-      style="
-      display: flex; 
-      justify-items: center;
-      justify-content: center;
-      align-content: center;
-      align-items: center; 
-      flex-direction: column;
-      "
-    >
-      <h1
-        style="
-        text-align: center;
-        padding: 0;
-        margin: 0;
-        "
-      >
-        Sage Tech-X
-      </h1>
-      <h1
-        style="
-        text-align: center;
-        padding: 0;
-        margin: 0;
-        "
-      >
-        Magazine
-      </h1>
-    </ParallaxLayer>
-    <ParallaxLayer
-      rate={1}
-      offset={1}
-      style="
-            justify-content: flex-start;
-            margin-top: 15rem;
-            align-items: left;
-            font-size: 2rem;
-            z-index: 3;
-            position: absolute;
-            padding-left: 4rem; 
-            padding-right: 4rem; 
-          "
-    >
-      <h1 style="text-align: left;">Our mission.</h1>
-      <div style="display: flex;">
-        <div
-          style="
-        display: flex;
-        flex-basis: 50%;
-        flex-direction: column;
-        justify-content: space-between;
-        max-width: 30rem;
-        "
-        >
-          <div style="display: grid;">
-            <div
-              style="text-overflow: clip;
-              overflow: hidden; 
-              width:  {((pageX * 1.5) / windowWidth) * 25}rem; 
-              grid-column: 1;
-              grid-row: 1;
-              height: 100%;
-              "
-            >
-              <p
-                style="
-              color: black;
-              width: 30rem;
-              background-color: var(--primary-color);
-              padding: 1rem;
-              border: 0.1rem solid rgba(255, 255, 255, 1);
-              border-radius: 1rem;
-              z-index: 0;
-              "
-              >
-                The Sage Tech-X Magazine hopes to inform and engage the Sage
-                Hill students and community about the state of STEM, its
-                transformative effects on society, and its limitless
-                possibilities in the future.
-              </p>
-            </div>
-            <p
-              style="
-              color: antiquewhite;
-              width: 30rem;
-              background-color: black;
-              padding: 1rem;
-              border: 0.1rem solid rgba(255, 255, 255, 1);
-              border-radius: 1rem;
-              grid-column: 1;
-              grid-row: 1;
-              z-index: -1;
-              "
-            >
-              The Sage Tech-X Magazine hopes to inform and engage the Sage Hill
-              students and community about the state of STEM, its transformative
-              effects on society, and its limitless possibilities in the future.
-            </p>
-          </div>
-          <p>
-            Started in 2021, Minki Shin (class of 2022) created the Tech-X
-            Magazine with the intention to inspire an open and passionate STEM
-            community. The magazine gives students the opportunity to share
-            their interests and learn from others. Learning how to distill
-            complex ideas into more digestable language is an important skill,
-            yet it's also an under-practiced skill among many young STEM
-            students.
-          </p>
-          <p>
-            If you're interested in contributing to the magazine, please contact
-            our current editor-in-chief: 24robertsonk@sagehillschool.org.
-          </p>
-        </div>
-      </div>
-    </ParallaxLayer>
-    <ParallaxLayer
-      rate={2}
-      offset={2}
-      style="
-    justify-content: flex-start;
-    gap: 2rem;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    z-index: 3;
-    padding-left: 4rem;
-    padding-right: 4rem;
-  "
-    >
-      <h1 style="margin: 0;">Meet our team.</h1>
-      <p
-        style="
-        color: antiquewhite;
-        max-width: 600px;
-        margin: 0;
-        text-align: center;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        "
-      >
-        The Sage Tech-X team consists of passionate members of the Sage Hill
-        community, who write, edit, and design the magazine. Special thanks to
-        Mr. Parker, our club advisor!
-      </p>
-      <Team />
-      <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 4rem;">
-        <div class="column">
-          <img src="teamPhotos/teamPhoto.jpg" alt="photoOfTeam" />
-        </div>
-        <div class="column">
-          <img src="teamPhotos/magazineOnTable.jpg" alt="photoOfTeam" />
-        </div>
-      </div>
-    </ParallaxLayer>
+<div
+  class="page intro"
+  style="height: calc(100vh - {$navbarHeight}px); padding: 0; margin: 0;"
+>
+  <div
+    style="z-index: 1; height: calc(100vh - {$navbarHeight}px); width: 100vw; position: absolute; display: flex; justify-content: center; align-items: center;"
+  >
+    <h1 style="text-align: center;">SAGE TECH-X MAGAZINE</h1>
+  </div>
 
-    <MediaQuery query="(min-width: 1150px)" let:matches>
-      {#if matches}
-        <div class="default">
-          {#each paths as pathInfo}
-            <ParallaxLayer
-              rate={pathInfo.rate}
-              offset={0}
-              style="
-              justify-content: flex-start; 
-              z-index: {pathInfo.z};
-              "
-            >
-              <svg
-                class="gr1"
-                xmlns="http://www.w3.org/2000/svg"
-                width="904"
-                height="2000"
-                viewBox="0 0 904 2000"
-                fill="url(#gradient{pathInfo.id})"
-                preserveAspectRatio="none"
-              >
-                <filter id="grain">
-                  <feTurbulence
-                    type="fractalNoise"
-                    baseFrequency="6"
-                    stitchTiles="stitch"
-                  />
-                  <feColorMatrix
-                    in="colorNoise"
-                    type="matrix"
-                    values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"
-                  />
-                  <feComposite
-                    operator="in"
-                    in2="SourceGraphic"
-                    result="monoNoise"
-                  />
-                  <feBlend
-                    in="SourceGraphic"
-                    in2="monoNoise"
-                    mode="hard-light"
-                  />
-                </filter>
-                <path
-                  filter="url(#grain)"
-                  d={pathInfo.form}
-                  transform="scale(3 4) translate({pathInfo.pos[0]} {pathInfo
-                    .pos[1]})"
-                />
-                <linearGradient id="gradient{pathInfo.id}">
-                  <stop stop-color={pathInfo.color[0]} offset="30%" />
-                  <stop stop-color={pathInfo.color[1]} offset="100%" />
-                </linearGradient>
-              </svg>
-            </ParallaxLayer>
-          {/each}
-
-          <ParallaxLayer offset={0}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="904"
-              height="2000"
-              viewBox="0 0 904 2000"
-              preserveAspectRatio="none"
-            >
-              <radialGradient
-                id="G2"
-                cx="50%"
-                cy="50%"
-                r="50%"
-                fx="50%"
-                fy="50%"
-              >
-                <stop
-                  offset="0%"
-                  style="stop-color:var(--beige);    stop-opacity:0.1"
-                />
-                <stop
-                  offset="100%"
-                  style="stop-color:var(--beige); stop-opacity:0"
-                />
-              </radialGradient>
-              <ellipse cx="150" cy="650" rx="300" ry="400" fill="url(#G2)" />
-
-              <radialGradient
-                id="G3"
-                cx="50%"
-                cy="50%"
-                r="50%"
-                fx="50%"
-                fy="50%"
-              >
-                <stop
-                  offset="0%"
-                  style="stop-color:var(--primary-accent);    stop-opacity:0.2"
-                />
-                <stop
-                  offset="100%"
-                  style="stop-color:var(--darker-accent); stop-opacity:0"
-                />
-              </radialGradient>
-              <ellipse cx="850" cy="100" rx="300" ry="250" fill="url(#G3)" />
-            </svg>
-          </ParallaxLayer>
-          <ParallaxLayer
-            rate={1}
-            offset={1}
-            style="
-            justify-content: flex-start;
-            margin-top: 15rem;
-            align-items: left;
-            font-size: 2rem;
-            z-index: 2;
-            position: absolute;
-          "
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="904"
-              height="2000"
-              viewBox="0 0 904 2000"
-              preserveAspectRatio="none"
-              style="position: absolute; z-index: -3;"
-            >
-              <radialGradient
-                id="G4"
-                cx="50%"
-                cy="50%"
-                r="50%"
-                fx="50%"
-                fy="50%"
-              >
-                <stop
-                  offset="0%"
-                  style="stop-color:var(--primary-color);    stop-opacity:0.5"
-                />
-                <stop
-                  offset="100%"
-                  style="stop-color:var(--primary-accent); stop-opacity:0"
-                />
-              </radialGradient>
-              <ellipse cx="0" cy="750" rx="500" ry="500" fill="url(#G4)" />
-
-              <radialGradient
-                id="G9"
-                cx="50%"
-                cy="50%"
-                r="50%"
-                fx="50%"
-                fy="50%"
-              >
-                <stop
-                  offset="0%"
-                  style="stop-color:var(--darker-accent);    stop-opacity:0.2"
-                />
-                <stop
-                  offset="100%"
-                  style="stop-color:var(--lime); stop-opacity:0"
-                />
-              </radialGradient>
-              <ellipse cx="850" cy="400" rx="300" ry="400" fill="url(#G9)" />
-            </svg>
-          </ParallaxLayer>
-          <ParallaxLayer
-            rate={1.5}
-            offset={1}
-            style="
-            margin-top: 15rem;
-            align-items: right;
-            font-size: 2rem;
-            z-index: 3;
-            position: absolute;
-            padding-right: 4rem; 
-            padding-top: 17rem;
-          "
-          >
-            <div
-              style="float: right; display: grid; justify-items: center;            
-              flex-direction: column;"
-            >
-              <img
-                src="teamPhotos/photoofmagazines.jpg"
-                alt="logo"
-                style="width: 30rem; border-radius: 2rem;"
-              />
-            </div>
-          </ParallaxLayer>
-          <ParallaxLayer offset={2} rate={2}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="904"
-              height="2000"
-              viewBox="0 0 904 2000"
-              preserveAspectRatio="none"
-            >
-              <radialGradient
-                id="G5"
-                cx="50%"
-                cy="50%"
-                r="50%"
-                fx="50%"
-                fy="50%"
-              >
-                <stop
-                  offset="0%"
-                  style="stop-color:var(--primary-color);    stop-opacity:0.3"
-                />
-                <stop
-                  offset="100%"
-                  style="stop-color:var(--beige); stop-opacity:0"
-                />
-              </radialGradient>
-              <ellipse cx="100" cy="550" rx="350" ry="350" fill="url(#G5)" />
-
-              <radialGradient
-                id="G8"
-                cx="50%"
-                cy="50%"
-                r="50%"
-                fx="50%"
-                fy="50%"
-              >
-                <stop
-                  offset="0%"
-                  style="stop-color:var(--darker-accent);    stop-opacity:0.3"
-                />
-                <stop
-                  offset="100%"
-                  style="stop-color:var(--lime); stop-opacity:0"
-                />
-              </radialGradient>
-              <ellipse cx="850" cy="400" rx="300" ry="400" fill="url(#G8)" />
-            </svg>
-          </ParallaxLayer>
-        </div>
-      {/if}
-    </MediaQuery>
-
-    <MediaQuery query="(min-width: 600px) and (max-width: 1150px)" let:matches>
-      {#if matches}
-        <div class="default">
-          {#each paths as pathInfo}
-            <ParallaxLayer
-              rate={pathInfo.rate}
-              offset={0}
-              style="
-              justify-content: flex-start; 
-              z-index: {pathInfo.z};
-              "
-            >
-              <svg
-                class="gr1"
-                xmlns="http://www.w3.org/2000/svg"
-                width="904"
-                height="2000"
-                viewBox="0 0 904 2000"
-                fill="url(#gradient{pathInfo.id})"
-                preserveAspectRatio="none"
-              >
-                <filter id="grain">
-                  <feTurbulence
-                    type="fractalNoise"
-                    baseFrequency="6"
-                    stitchTiles="stitch"
-                  />
-                  <feColorMatrix
-                    in="colorNoise"
-                    type="matrix"
-                    values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"
-                  />
-                  <feComposite
-                    operator="in"
-                    in2="SourceGraphic"
-                    result="monoNoise"
-                  />
-                  <feBlend
-                    in="SourceGraphic"
-                    in2="monoNoise"
-                    mode="hard-light"
-                  />
-                </filter>
-                <path
-                  filter="url(#grain)"
-                  d={pathInfo.form}
-                  transform="scale(3 3) translate({pathInfo.pos[0]} {pathInfo
-                    .pos[1]})"
-                />
-                <linearGradient id="gradient{pathInfo.id}">
-                  <stop stop-color={pathInfo.color[0]} offset="30%" />
-                  <stop stop-color={pathInfo.color[1]} offset="100%" />
-                </linearGradient>
-              </svg>
-            </ParallaxLayer>
-          {/each}
-
-          <ParallaxLayer offset={0}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="904"
-              height="2000"
-              viewBox="0 0 904 2000"
-              preserveAspectRatio="none"
-            >
-              <radialGradient
-                id="G2"
-                cx="50%"
-                cy="50%"
-                r="50%"
-                fx="50%"
-                fy="50%"
-              >
-                <stop
-                  offset="0%"
-                  style="stop-color:var(--beige);    stop-opacity:0.3"
-                />
-                <stop
-                  offset="100%"
-                  style="stop-color:var(--beige); stop-opacity:0"
-                />
-              </radialGradient>
-              <ellipse cx="150" cy="650" rx="300" ry="400" fill="url(#G2)" />
-
-              <radialGradient
-                id="G3"
-                cx="50%"
-                cy="50%"
-                r="50%"
-                fx="50%"
-                fy="50%"
-              >
-                <stop
-                  offset="0%"
-                  style="stop-color:var(--primary-accent);    stop-opacity:0.5"
-                />
-                <stop
-                  offset="100%"
-                  style="stop-color:var(--darker-accent); stop-opacity:0"
-                />
-              </radialGradient>
-              <ellipse cx="850" cy="100" rx="300" ry="250" fill="url(#G3)" />
-            </svg>
-          </ParallaxLayer>
-          <ParallaxLayer
-            rate={1}
-            offset={1}
-            style="
-            justify-content: flex-start;
-            margin-top: 15rem;
-            align-items: left;
-            font-size: 2rem;
-            z-index: 2;
-            position: absolute;
-          "
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="904"
-              height="2000"
-              viewBox="0 0 904 2000"
-              preserveAspectRatio="none"
-              style="position: absolute; z-index: -3;"
-            >
-              <radialGradient
-                id="G4"
-                cx="50%"
-                cy="50%"
-                r="50%"
-                fx="50%"
-                fy="50%"
-              >
-                <stop
-                  offset="0%"
-                  style="stop-color:var(--primary-color);    stop-opacity:0.5"
-                />
-                <stop
-                  offset="100%"
-                  style="stop-color:var(--primary-accent); stop-opacity:0"
-                />
-              </radialGradient>
-              <ellipse cx="0" cy="750" rx="500" ry="500" fill="url(#G4)" />
-
-              <radialGradient
-                id="G9"
-                cx="50%"
-                cy="50%"
-                r="50%"
-                fx="50%"
-                fy="50%"
-              >
-                <stop
-                  offset="0%"
-                  style="stop-color:var(--darker-accent);    stop-opacity:0.2"
-                />
-                <stop
-                  offset="100%"
-                  style="stop-color:var(--lime); stop-opacity:0"
-                />
-              </radialGradient>
-              <ellipse cx="850" cy="400" rx="300" ry="400" fill="url(#G9)" />
-            </svg>
-          </ParallaxLayer>
-          <ParallaxLayer offset={2} rate={2}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="904"
-              height="2000"
-              viewBox="0 0 904 2000"
-              preserveAspectRatio="none"
-            >
-              <radialGradient
-                id="G5"
-                cx="50%"
-                cy="50%"
-                r="50%"
-                fx="50%"
-                fy="50%"
-              >
-                <stop
-                  offset="0%"
-                  style="stop-color:var(--primary-color);    stop-opacity:0.3"
-                />
-                <stop
-                  offset="100%"
-                  style="stop-color:var(--beige); stop-opacity:0"
-                />
-              </radialGradient>
-              <ellipse cx="100" cy="550" rx="350" ry="350" fill="url(#G5)" />
-
-              <radialGradient
-                id="G8"
-                cx="50%"
-                cy="50%"
-                r="50%"
-                fx="50%"
-                fy="50%"
-              >
-                <stop
-                  offset="0%"
-                  style="stop-color:var(--darker-accent);    stop-opacity:0.3"
-                />
-                <stop
-                  offset="100%"
-                  style="stop-color:var(--lime); stop-opacity:0"
-                />
-              </radialGradient>
-              <ellipse cx="850" cy="400" rx="300" ry="400" fill="url(#G8)" />
-            </svg>
-          </ParallaxLayer>
-        </div>
-      {/if}
-    </MediaQuery>
-
-    <MediaQuery query="(max-width: 600px)" let:matches>
-      {#if matches}
-        <ParallaxLayer offset={0}>
-          <p style="text-align: center; font-style: italic; color:chartreuse">
-            For the best viewing experience, please move to desktop
-          </p>
-        </ParallaxLayer>
-        <ParallaxLayer
-          rate={1}
-          offset={1}
-          style="
-                justify-content: flex-start;
-                margin-top: 15rem;
-                align-items: left;
-                font-size: 2rem;
-                z-index: 2;
-                position: absolute;
-              "
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="904"
-            height="2000"
-            viewBox="0 0 904 2000"
-            preserveAspectRatio="none"
-            style="position: absolute; z-index: -3;"
-          >
-            <radialGradient id="G4" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-              <stop
-                offset="0%"
-                style="stop-color:var(--primary-color);    stop-opacity:0.5"
-              />
-              <stop
-                offset="100%"
-                style="stop-color:var(--primary-accent); stop-opacity:0"
-              />
-            </radialGradient>
-            <ellipse cx="0" cy="500" rx="500" ry="300" fill="url(#G4)" />
-          </svg>
-        </ParallaxLayer>
-
-        <ParallaxLayer offset={2} rate={2}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="904"
-            height="2000"
-            viewBox="0 0 904 2000"
-            preserveAspectRatio="none"
-          >
-            <radialGradient id="G5" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-              <stop
-                offset="0%"
-                style="stop-color:var(--primary-color);    stop-opacity:0.3"
-              />
-              <stop
-                offset="100%"
-                style="stop-color:var(--beige); stop-opacity:0"
-              />
-            </radialGradient>
-            <ellipse cx="100" cy="550" rx="350" ry="350" fill="url(#G5)" />
-
-            <radialGradient id="G8" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-              <stop
-                offset="0%"
-                style="stop-color:var(--darker-accent);    stop-opacity:0.3"
-              />
-              <stop
-                offset="100%"
-                style="stop-color:var(--lime); stop-opacity:0"
-              />
-            </radialGradient>
-            <ellipse cx="850" cy="400" rx="300" ry="400" fill="url(#G8)" />
-          </svg>
-        </ParallaxLayer>
-      {/if}
-    </MediaQuery>
-  </Parallax>
+  <div
+    class="revolvingStart"
+    style="--revolvingPhotoWidth: {photoIntroWidthHeight}; z-index: 0;"
+  >
+    <img class="revolving rev1" src="1.1/p1.jpg" alt="example1" />
+    <img class="revolving rev2" src="1.2/p1.jpg" alt="example2" />
+    <img
+      class="revolving rev3"
+      src="3.2\finalTechX2023sem2-part-41024_1.jpg"
+      alt="example3"
+    />
+    <img class="revolving rev4" src="2.1/p1.jpg" alt="example4" />
+    <img class="revolving rev5" src="2.2/p2.jpg" alt="example5" />
+    <img class="revolving rev6" src="1.3/p1.jpg" alt="example6" />
+    <img class="revolving rev7" src="2.2/p1.jpg" alt="example7" />
+    <img
+      class="revolving rev8"
+      src="3.2/finalTechX2023sem2-part-51024_1.jpg"
+      alt="example8"
+    />
+    <img class="revolving rev9" src="1.2/p9.jpg" alt="example9" />
+  </div>
 </div>
 
+<div style="height: 20rem;" />
+<div
+  class="page pg1"
+  style="height: calc(100vh - {$navbarHeight}px); border-radius: 0; z-index: 3;"
+>
+  <h3
+    class="pg1Text1"
+    style="position: absolute; top: 2rem; right: 2rem; width: calc(100%-4rem); max-width: 60vw;"
+  >
+    The Sage Tech-X Magazine hopes to inform and engage the Sage Hill students
+    and community about the state of STEM, its transformative effects on
+    society, and its limitless possibilities in the future.
+  </h3>
+  <div
+    class="slider"
+    style="background-color: antiquewhite; height: calc(100vh); position: absolute; width: 100%;"
+  />
+  <div class="pg1Text2" style="position: absolute;">
+    <MediaQuery query="(min-width: 800px)" let:matches>
+      {#if matches}
+        <div
+          style="width: 100vw; top: {$navbarHeight}px; bottom: 0; left: 0; height: calc(100vh - {$navbarHeight}px); display: grid; grid-template-columns: 1fr 1fr;"
+        >
+          <div
+            style="right: 0; background: linear-gradient(antiquewhite, rgba(250, 235, 215, 0) 20%, rgba(250, 235, 215, 0) 70%, antiquewhite 90%); position: absolute; width: 50%; z-index: 5; height: calc(100vh - {$navbarHeight}px); top: 0;"
+          />
+          <div style="margin-left: 2rem;">
+            <h1 style="color: var(--black); margin-bottom: 4rem;">Our Story</h1>
+            <p style="color: var(--black); max-width: 35rem;">
+              Started in 2021, Minki Shin (class of 2022) created the Tech-X
+              Magazine with the intention to inspire an open and passionate STEM
+              community. The magazine gives students the opportunity to share
+              their interests and learn from others. Learning how to distill
+              complex ideas into more digestable language is an important skill,
+              yet it's also an under-practiced skill among many young STEM
+              students.
+            </p>
+            <p style="color: var(--black); max-width: 35rem;">
+              If you're interested in contributing to the magazine, please
+              contact our current editor-in-chief:
+              24robertsonk@sagehillschool.org.
+            </p>
+          </div>
+
+          <div
+            class="carousel-container"
+            style="height: calc(100vh - {$navbarHeight}px - 10px); margin-top: 5px; "
+          >
+            <div class="carousel-inner" style="z-index: -1;">
+              {#each [...allImages, ...allImages] as image, index (index)}
+                <img src={image} alt={`${index}`} class="carousel-item" />
+              {/each}
+            </div>
+          </div>
+        </div>
+      {/if}
+    </MediaQuery>
+
+    <MediaQuery query="(max-width: 800px)" let:matches>
+      {#if matches}
+        <div
+          style="width: 100%; top: {$navbarHeight}px; bottom: 0; left: 0; height: calc(100vh - {$navbarHeight}px); display: flex; flex-direction: column; gap: 8rem; justify-content: center;"
+        >
+          <div
+            style="right: 0; background: linear-gradient(horizontal, antiquewhite, rgba(250, 235, 215, 0) 20%, rgba(250, 235, 215, 0) 50%, antiquewhite 80%); position: absolute; width: 100%; z-index: 5; height: 30rem; bottom: 0;"
+          />
+          <div style="margin-left: 2rem;">
+            <h1 style="color: var(--black); margin-bottom: 4rem;">Our Story</h1>
+            <p style="color: var(--black); max-width: 35rem;">
+              Started in 2021, Minki Shin (class of 2022) created the Tech-X
+              Magazine with the intention to inspire an open and passionate STEM
+              community. The magazine gives students the opportunity to share
+              their interests and learn from others. Learning how to distill
+              complex ideas into more digestable language is an important skill,
+              yet it's also an under-practiced skill among many young STEM
+              students.
+            </p>
+            <p style="color: var(--black); max-width: 35rem;">
+              If you're interested in contributing to the magazine, please
+              contact our current editor-in-chief:
+              24robertsonk@sagehillschool.org.
+            </p>
+          </div>
+
+          <div class="carousel-container" style="margin-top: 1px;">
+            <div class="carousel-inner" style="z-index: -1;">
+              {#each [...allImages, ...allImages] as image, index (index)}
+                <img src={image} alt={`${index}`} class="carousel-item" />
+              {/each}
+            </div>
+          </div>
+        </div>
+      {/if}
+    </MediaQuery>
+  </div>
+</div>
+
+<div style="height: 15rem;" />
+<div class="page">
+  <h1 class="page3text" style="margin: auto; text-align: center;">
+    Meet Our Team
+  </h1>
+  <div style="height: 10rem;"></div>
+  <Team />
+</div>
+<Footer />
+
 <style>
-  .container {
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .gr1 {
-    z-index: 1;
-    filter: saturate(100%);
-  }
-  svg {
-    width: 100%;
-  }
-  .column {
-    flex: 1;
-    max-width: 50%;
-  }
-
-  .column img {
-    vertical-align: middle;
-    width: 100%;
-    border-radius: 1rem;
-  }
   @media (max-width: 800px) {
-    .column {
-      flex: 100%;
-      max-width: 100%;
+    @keyframes scroll {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+    .carousel-container {
+      overflow: hidden;
+      white-space: nowrap;
+      width: calc(100vw - 4rem);
+    }
+
+    .carousel-item {
+      flex: 0 0 auto;
+      width: 30rem;
+      height: auto;
+      object-fit: cover;
+      border-radius: 1rem;
+    }
+    .carousel-inner {
+      animation: scroll 20s linear infinite; /* Adjust time as needed */
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
     }
   }
-  .backgroundDiv {
-    position: relative;
-    height: 100%;
-    background-image: linear-gradient(
-      rgba(5, 11, 3, 0.8) 0%,
-      rgba(5, 11, 3, 1) 70%
-    );
-    overflow: hidden;
-    backface-visibility: hidden;
+
+  @media (min-width: 800px) {
+    @keyframes scroll {
+      0% {
+        transform: translateY(0%);
+      }
+      100% {
+        transform: translateY(-50%);
+      }
+    }
+    .carousel-container {
+      overflow: hidden;
+      white-space: nowrap;
+      margin: auto;
+    }
+
+    .carousel-item {
+      flex: 0 0 auto;
+      width: 20rem;
+      height: auto;
+      object-fit: cover;
+      border-radius: 1rem;
+    }
+    .carousel-inner {
+      animation: scroll 20s linear infinite; /* Adjust time as needed */
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
   }
 
-  .backgroundDiv::before {
-    content: "";
+  .revolving {
+    width: calc(var(--revolvingPhotoWidth) * 1rem);
+    height: auto;
     position: absolute;
-    margin: 1px 1px 1px 1px;
-    width: 99%;
-    height: 99%;
-    background-image: url("/teamPhotos/sideProfileOfMagazines.png");
-    background-size: auto;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: -1;
+    left: calc(50% - calc(var(--revolvingPhotoWidth) * 1rem) / 2);
+    top: calc(50% + 5rem);
+    visibility: hidden;
+  }
+
+  .page {
+    padding: 2rem;
+    margin: 0;
+    z-index: 0;
+    position: relative;
+    border-radius: 2rem;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10rem;
   }
 </style>
