@@ -25,12 +25,14 @@
 
 <style>
   :global(:root) {
-    --primary-color: #5fc131;
-    --primary-accent: #005c53;
-    --darker-accent: #00ff77;
+    --primary-color: rgb(114, 140, 88);
+    --primary-color-rgb: 114, 140, 88;
+    --primary-accent: #93a680;
+    --darker-accent: rgb(102, 140, 63);
+    --darker-accent-rgb: 102, 140, 63;
     --lime: #dbf227;
     --beige: #c5be8c;
-    --black: rgb(5, 11, 3);
+    --black: rgb(13, 13, 13);
     color: antiquewhite;
     background-color: var(--black);
   }

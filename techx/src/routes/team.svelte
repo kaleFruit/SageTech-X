@@ -15,7 +15,7 @@
   <div
     use:ref
     class="role"
-    style="--color:var(--beige); flex-grow: 1; --pagex: {x}px; --pagey: {y}px;"
+    style="--color:var(--primary-color); flex-grow: 1; --pagex: {x}px; --pagey: {y}px;"
   >
     <h>EDITORS</h>
     <div class="cards">
@@ -34,7 +34,7 @@
   <div
     use:ref
     class="role"
-    style="--color: var(--lime); flex-grow: 1;  --pagex: {x}px; --pagey: {y}px;"
+    style="--color: var(--primary-color); flex-grow: 1;  --pagex: {x}px; --pagey: {y}px;"
   >
     <h>GRAPHIC DESIGNERS</h>
     <div class="cards">
@@ -53,7 +53,7 @@
   <div
     use:ref
     class="role"
-    style="--color: var(--darker-accent); width: 100%; --pagex: {x}px; --pagey: {y}px;"
+    style="--color: var(--primary-color); width: 100%; --pagex: {x}px; --pagey: {y}px;"
   >
     <h>WRITERS</h>
     <div class="cards">
@@ -140,7 +140,7 @@
     background-origin: border-box;
     background-image: radial-gradient(
       circle at var(--pagex) var(--pagey),
-      #b7ff003f,
+      rgba(var(--darker-accent-rgb), 0.2),
       transparent 50%
     );
   }

@@ -11,7 +11,7 @@
     class="subbox"
     style="flex-basis: 100%; --pagex: {x}px; --pagey: {y}px;"
   >
-    <h2 style="color: var(--darker-accent);">ARTICLES</h2>
+    <h2 style="color: var(--primary-color);">ARTICLES</h2>
     <div class="grid-container">
       <div class="grid-item-title">
         The Possibility of a Real-Life Star Wars Gun
@@ -42,7 +42,7 @@
     class="subbox"
     style="flex-grow: 1; --pagex: {x}px; --pagey: {y}px; "
   >
-    <h2 style="color: var(--beige);">EDITORS</h2>
+    <h2 style="color: var(--primary-color);">EDITORS</h2>
     <ul>
       <li>Minki Shin (EIC)</li>
     </ul>
@@ -52,7 +52,7 @@
     class="subbox"
     style="flex-grow: 1; --pagex: {x}px; --pagey: {y}px;"
   >
-    <h2 style="color: var(--lime);">GRAPHIC DESIGNERS</h2>
+    <h2 style="color: var(--primary-color);">GRAPHIC DESIGNERS</h2>
     <ul style="text-align: center;">
       <li>Minki Shin</li>
     </ul>
@@ -90,7 +90,7 @@
     background-origin: border-box;
     background-image: radial-gradient(
       circle at var(--pagex) var(--pagey),
-      #b7ff003f,
+      rgba(var(--darker-accent-rgb), 0.2),
       transparent 50%
     );
   }
