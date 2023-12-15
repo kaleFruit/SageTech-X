@@ -54,6 +54,14 @@
     :global(html) {
       font-size: 16px;
     }
+    a {
+      font-size: 0.75rem;
+    }
+  }
+  @media (max-width: 600px) {
+    a {
+      font-size: 1rem;
+    }
   }
 
   :global(h1) {
@@ -113,7 +121,6 @@
     text-decoration: none;
     color: antiquewhite;
     font-family: "Inter";
-    font-size: 0.75rem;
     transform-origin: center;
     transform: scale(1);
     text-shadow: var(--black) 1px 0 10px;
