@@ -52,6 +52,8 @@
       <span>Edition 4.1 is Now Out!</span>
       <span>Edition 4.1 is Now Out!</span>
       <span>Edition 4.1 is Now Out!</span>
+      <span>Edition 4.1 is Now Out!</span>
+      <span>Edition 4.1 is Now Out!</span>
     </div>
   </div>
 </div>
