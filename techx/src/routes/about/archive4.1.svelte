@@ -16,7 +16,7 @@
       <div class="grid-item-title">Unraveling the Yang Mills Theorem</div>
       <div class="grid-item-author">Alen Zhang</div>
       <div class="grid-item-title">You're Not Massive, You're Just Popular</div>
-      <div class="grid-item-author">Justin Klein</div>
+      <div class="grid-item-author">Justin Kline</div>
       <div class="grid-item-title">Unleashing the Power of QML</div>
       <div class="grid-item-author">Bruce Li</div>
       <div class="grid-item-title">Tachyons: The Speed Demons of Physics</div>

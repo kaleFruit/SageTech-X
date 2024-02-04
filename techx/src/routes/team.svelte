@@ -48,6 +48,11 @@
         <p>Years: 2022-Present</p>
         <p>Grade: Senior</p>
       </div>
+      <div class="infoCard">
+        <h2>Danny Al-Ali</h2>
+        <p>Years: 2023-Present</p>
+        <p>Grade: Junior</p>
+      </div>
     </div>
   </div>
   <div
@@ -111,6 +116,26 @@
         <h2>Kevin Hu</h2>
         <p>Years: 2022-Present</p>
         <p>Grade: Senior</p>
+      </div>
+      <div class="infoCard">
+        <h2>Harriet Lai</h2>
+        <p>Years: 2023-Present</p>
+        <p>Grade: Junior</p>
+      </div>
+      <div class="infoCard">
+        <h2>Justin Kline</h2>
+        <p>Years: 2023-Present</p>
+        <p>Grade: Sophomore</p>
+      </div>
+      <div class="infoCard">
+        <h2>Bruce Li</h2>
+        <p>Years: 2023-Present</p>
+        <p>Grade: Sophomore</p>
+      </div>
+      <div class="infoCard">
+        <h2>Arshaun Oshideri</h2>
+        <p>Years: 2023-Present</p>
+        <p>Grade: Sophomore</p>
       </div>
     </div>
   </div>
