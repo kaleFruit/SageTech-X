@@ -42,8 +42,8 @@
   >
     <h2 style="color: var(--primary-color);">EDITORS</h2>
     <ul>
-      <li>Phoebe Pan</li>
       <li>Katherine Robertson (EIC)</li>
+      <li>Phoebe Pan (Co-Editor)</li>
       <li>Marcus Yoo</li>
     </ul>
   </div>
