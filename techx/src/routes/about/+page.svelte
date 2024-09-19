@@ -1,6 +1,7 @@
 <script>
     let windowHeight = 0;
     import MediaQuery from "../../MediaQuery.svelte";
+    import Edition51 from "./archive5.1.svelte";
     import Edition41 from "./archive4.1.svelte";
     import Edition32 from "./archive3.2.svelte";
     import Edition31 from "./archive3.1.svelte";
@@ -49,18 +50,21 @@
     </h1>
     <div class="announcement-container">
         <div class="announcement-inner">
-            <span>Edition 4.1 is Now Out!</span>
-            <span>Edition 4.1 is Now Out!</span>
-            <span>Edition 4.1 is Now Out!</span>
-            <span>Edition 4.1 is Now Out!</span>
-            <span>Edition 4.1 is Now Out!</span>
-            <span>Edition 4.1 is Now Out!</span>
+            <span>Edition 5.1 is Now Out!</span>
+            <span>Edition 5.1 is Now Out!</span>
+            <span>Edition 5.1 is Now Out!</span>
+            <span>Edition 5.1 is Now Out!</span>
+            <span>Edition 5.1 is Now Out!</span>
+            <span>Edition 5.1 is Now Out!</span>
         </div>
     </div>
 </div>
 <div style="height: 1rem;" />
 <div class="container">
     <div class="backgroundDiv" />
+    <div class="edition">
+        <Edition51 />
+    </div>
     <div class="edition">
         <Edition41 />
     </div>
