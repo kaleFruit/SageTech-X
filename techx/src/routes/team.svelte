@@ -108,6 +108,11 @@
                 <p>Grade: Senior</p>
             </div>
             <div class="infoCard">
+                <h2>Danny Al-Ali</h2>
+                <p>Years: 2023-Present</p>
+                <p>Grade: Senior</p>
+            </div>
+            <div class="infoCard">
                 <h2>Aaron Dong</h2>
                 <p>Years: 2024-Present</p>
                 <p>Grade: Senior</p>
