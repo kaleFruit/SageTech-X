@@ -20,8 +20,23 @@
         <h>EDITORS</h>
         <div class="cards">
             <div class="infoCard">
-                <h2>Kevin Peng</h2>
+                <h2>Kevin Peng (EIC)</h2>
                 <p>Years: 2023-Present</p>
+                <p>Grade: Senior</p>
+            </div>
+            <div class="infoCard">
+                <h2>Jacob Lynn</h2>
+                <p>Years: 2022-Present</p>
+                <p>Grade: Senior</p>
+            </div>
+            <div class="infoCard">
+                <h2>Derek Zuo</h2>
+                <p>Years: 2022-Present</p>
+                <p>Grade: Senior</p>
+            </div>
+            <div class="infoCard">
+                <h2>Frank Lin</h2>
+                <p>Years: 2024-Present</p>
                 <p>Grade: Senior</p>
             </div>
         </div>
@@ -34,6 +49,11 @@
         <h>GRAPHIC DESIGNERS</h>
         <div class="cards">
             <div class="infoCard">
+                <h2>Frank Lin (Lead)</h2>
+                <p>Years: 2024-Present</p>
+                <p>Grade: Senior</p>
+            </div>
+            <div class="infoCard">
                 <h2>Kevin Peng</h2>
                 <p>Years: 2023-Present</p>
                 <p>Grade: Senior</p>
@@ -41,7 +61,7 @@
             <div class="infoCard">
                 <h2>Danny Al-Ali</h2>
                 <p>Years: 2023-Present</p>
-                <p>Grade: Junior</p>
+                <p>Grade: Senior</p>
             </div>
         </div>
     </div>
@@ -55,52 +75,57 @@
             <div class="infoCard">
                 <h2>Kevin Peng</h2>
                 <p>Years: 2023-Present</p>
-                <p>Grade: Junior</p>
+                <p>Grade: Senior</p>
             </div>
             <div class="infoCard">
                 <h2>Oneal Wang</h2>
                 <p>Years: 2022-Present</p>
-                <p>Grade: Junior</p>
+                <p>Grade: Senior</p>
             </div>
             <div class="infoCard">
                 <h2>Jacob Lynn</h2>
                 <p>Years: 2022-Present</p>
-                <p>Grade: Junior</p>
+                <p>Grade: Senior</p>
             </div>
             <div class="infoCard">
                 <h2>Derek Zuo</h2>
                 <p>Years: 2022-Present</p>
-                <p>Grade: Junior</p>
+                <p>Grade: Senior</p>
             </div>
             <div class="infoCard">
                 <h2>Melody Yu</h2>
                 <p>Years: 2022-Present</p>
-                <p>Grade: Junior</p>
+                <p>Grade: Senior</p>
             </div>
             <div class="infoCard">
                 <h2>Alen Zhang</h2>
                 <p>Years: 2022-Present</p>
-                <p>Grade: Junior</p>
+                <p>Grade: Senior</p>
             </div>
             <div class="infoCard">
                 <h2>Harriet Lai</h2>
                 <p>Years: 2023-Present</p>
-                <p>Grade: Junior</p>
+                <p>Grade: Senior</p>
+            </div>
+            <div class="infoCard">
+                <h2>Aaron Dong</h2>
+                <p>Years: 2024-Present</p>
+                <p>Grade: Senior</p>
             </div>
             <div class="infoCard">
                 <h2>Justin Kline</h2>
                 <p>Years: 2023-Present</p>
-                <p>Grade: Sophomore</p>
+                <p>Grade: Junior</p>
             </div>
             <div class="infoCard">
                 <h2>Bruce Li</h2>
                 <p>Years: 2023-Present</p>
-                <p>Grade: Sophomore</p>
+                <p>Grade: Junior</p>
             </div>
             <div class="infoCard">
                 <h2>Arshaun Oshideri</h2>
                 <p>Years: 2023-Present</p>
-                <p>Grade: Sophomore</p>
+                <p>Grade: Junior</p>
             </div>
         </div>
     </div>

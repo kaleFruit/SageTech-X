@@ -3,6 +3,7 @@
 
     const writers = [
         "Kevin Peng",
+        "Frank Lin",
         "Oneal Wang",
         "Katherine Robertson",
         "Nicole Ma",
@@ -32,6 +33,7 @@
         "Danny Al-Ali",
         "Kevin Peng",
         "Minki Shin",
+        "Frank Lin"
     ];
     const editors = [
         "Phoebe Pan",
